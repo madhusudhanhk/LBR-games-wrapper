@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9868B07171D11F70021AB7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B06171D11F70021AB7F /* UIKit.framework */; };
+		B9868B09171D11F70021AB7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B08171D11F70021AB7F /* Foundation.framework */; };
+		B9868B0B171D11F70021AB7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B0A171D11F70021AB7F /* CoreGraphics.framework */; };
+		B9868B11171D11F70021AB7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9868B0F171D11F70021AB7F /* InfoPlist.strings */; };
+		B9868B13171D11F70021AB7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9868B12171D11F70021AB7F /* main.m */; };
+		B9868B17171D11F70021AB7F /* GMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9868B16171D11F70021AB7F /* GMAppDelegate.m */; };
+		B9868B20171D11F70021AB7F /* GMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9868B1F171D11F70021AB7F /* GMViewController.m */; };
+		B9868B23171D11F70021AB7F /* GMViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9868B21171D11F70021AB7F /* GMViewController_iPhone.xib */; };
+		B9868B26171D11F70021AB7F /* GMViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9868B24171D11F70021AB7F /* GMViewController_iPad.xib */; };
+		B9868B2E171D11F80021AB7F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B2D171D11F80021AB7F /* SenTestingKit.framework */; };
+		B9868B2F171D11F80021AB7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B06171D11F70021AB7F /* UIKit.framework */; };
+		B9868B30171D11F80021AB7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B08171D11F70021AB7F /* Foundation.framework */; };
+		B9868B38171D11F80021AB7F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9868B36171D11F80021AB7F /* InfoPlist.strings */; };
+		B9868B3B171D11F80021AB7F /* GamesWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9868B3A171D11F80021AB7F /* GamesWrapperTests.m */; };
+		B99989F1171D58810014E04F /* UrlFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = B99989F0171D58810014E04F /* UrlFile.plist */; };
+		B9C1E35F17210E0200A97D25 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E35E17210E0200A97D25 /* CoreLocation.framework */; };
+		B9C1E36017210F1A00A97D25 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E35E17210E0200A97D25 /* CoreLocation.framework */; };
+		B9C1E364172520F300A97D25 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C1E363172520F300A97D25 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B9C1E3661725342E00A97D25 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E3651725342E00A97D25 /* CFNetwork.framework */; };
+		B9C1E3681725349000A97D25 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E3671725349000A97D25 /* SystemConfiguration.framework */; };
+		B9C1E37F17268E0400A97D25 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E37E17268E0400A97D25 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B9C1E38317268E6B00A97D25 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E38217268E6B00A97D25 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B9C1E3851726954900A97D25 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E3841726954900A97D25 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B9C1E387172695AD00A97D25 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E386172695AD00A97D25 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B9C1E389172695D400A97D25 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E388172695D400A97D25 /* FacebookSDKResources.bundle */; };
+		B9C1E38B172695FF00A97D25 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E38A172695FF00A97D25 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B9C1E38D1726969E00A97D25 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C1E38C1726969E00A97D25 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B9C1E39A172697CB00A97D25 /* app_icon_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E391172697CB00A97D25 /* app_icon_ipad.png */; };
+		B9C1E39B172697CB00A97D25 /* app_icon_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E392172697CB00A97D25 /* app_icon_ipad@2x.png */; };
+		B9C1E39C172697CB00A97D25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E393172697CB00A97D25 /* Default-568h@2x.png */; };
+		B9C1E39D172697CB00A97D25 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E394172697CB00A97D25 /* Default.png */; };
+		B9C1E39E172697CB00A97D25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E395172697CB00A97D25 /* Default@2x.png */; };
+		B9C1E39F172697CB00A97D25 /* splash_768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E396172697CB00A97D25 /* splash_768x1024.png */; };
+		B9C1E3A0172697CB00A97D25 /* splash_768x1024@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */; };
+		B9C1E3A21726983A00A97D25 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A11726983A00A97D25 /* app_icon.png */; };
+		B9C1E3A41726985F00A97D25 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A31726985E00A97D25 /* app_icon@2x.png */; };
+		B9C1E3A6172698B000A97D25 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A5172698AF00A97D25 /* Default-Portrait~ipad.png */; };
+		B9C1E3A8172698BD00A97D25 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A7172698BD00A97D25 /* Default-Portrait@2x~ipad.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9868B31171D11F80021AB7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9868AFB171D11F70021AB7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9868B02171D11F70021AB7F;
+			remoteInfo = GamesWrapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B9868B03171D11F70021AB7F /* GamesWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9868B06171D11F70021AB7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B9868B08171D11F70021AB7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B9868B0A171D11F70021AB7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B9868B0E171D11F70021AB7F /* GamesWrapper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GamesWrapper-Info.plist"; sourceTree = "<group>"; };
+		B9868B10171D11F70021AB7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B9868B12171D11F70021AB7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B9868B14171D11F70021AB7F /* GamesWrapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GamesWrapper-Prefix.pch"; sourceTree = "<group>"; };
+		B9868B15171D11F70021AB7F /* GMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMAppDelegate.h; sourceTree = "<group>"; };
+		B9868B16171D11F70021AB7F /* GMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAppDelegate.m; sourceTree = "<group>"; };
+		B9868B1E171D11F70021AB7F /* GMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMViewController.h; sourceTree = "<group>"; };
+		B9868B1F171D11F70021AB7F /* GMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMViewController.m; sourceTree = "<group>"; };
+		B9868B22171D11F70021AB7F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GMViewController_iPhone.xib; sourceTree = "<group>"; };
+		B9868B25171D11F70021AB7F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GMViewController_iPad.xib; sourceTree = "<group>"; };
+		B9868B2C171D11F80021AB7F /* GamesWrapperTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesWrapperTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9868B2D171D11F80021AB7F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B9868B35171D11F80021AB7F /* GamesWrapperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GamesWrapperTests-Info.plist"; sourceTree = "<group>"; };
+		B9868B37171D11F80021AB7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B9868B39171D11F80021AB7F /* GamesWrapperTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesWrapperTests.h; sourceTree = "<group>"; };
+		B9868B3A171D11F80021AB7F /* GamesWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesWrapperTests.m; sourceTree = "<group>"; };
+		B99989F0171D58810014E04F /* UrlFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UrlFile.plist; sourceTree = "<group>"; };
+		B9C1E35E17210E0200A97D25 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B9C1E362172520F300A97D25 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B9C1E363172520F300A97D25 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B9C1E3651725342E00A97D25 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B9C1E3671725349000A97D25 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B9C1E37E17268E0400A97D25 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		B9C1E38217268E6B00A97D25 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		B9C1E3841726954900A97D25 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		B9C1E386172695AD00A97D25 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B9C1E388172695D400A97D25 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		B9C1E38A172695FF00A97D25 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B9C1E38C1726969E00A97D25 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		B9C1E391172697CB00A97D25 /* app_icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_ipad.png; sourceTree = "<group>"; };
+		B9C1E392172697CB00A97D25 /* app_icon_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon_ipad@2x.png"; sourceTree = "<group>"; };
+		B9C1E393172697CB00A97D25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B9C1E394172697CB00A97D25 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B9C1E395172697CB00A97D25 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B9C1E396172697CB00A97D25 /* splash_768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_768x1024.png; sourceTree = "<group>"; };
+		B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_768x1024@2x.png"; sourceTree = "<group>"; };
+		B9C1E3A11726983A00A97D25 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../../app_icon.png; sourceTree = "<group>"; };
+		B9C1E3A31726985E00A97D25 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../../app_icon@2x.png"; sourceTree = "<group>"; };
+		B9C1E3A5172698AF00A97D25 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		B9C1E3A7172698BD00A97D25 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B9868B00171D11F70021AB7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C1E38D1726969E00A97D25 /* Accounts.framework in Frameworks */,
+				B9C1E38B172695FF00A97D25 /* Security.framework in Frameworks */,
+				B9C1E387172695AD00A97D25 /* libsqlite3.dylib in Frameworks */,
+				B9C1E3851726954900A97D25 /* AdSupport.framework in Frameworks */,
+				B9C1E37F17268E0400A97D25 /* Social.framework in Frameworks */,
+				B9C1E3681725349000A97D25 /* SystemConfiguration.framework in Frameworks */,
+				B9C1E3661725342E00A97D25 /* CFNetwork.framework in Frameworks */,
+				B9C1E36017210F1A00A97D25 /* CoreLocation.framework in Frameworks */,
+				B9868B07171D11F70021AB7F /* UIKit.framework in Frameworks */,
+				B9868B09171D11F70021AB7F /* Foundation.framework in Frameworks */,
+				B9868B0B171D11F70021AB7F /* CoreGraphics.framework in Frameworks */,
+				B9C1E38317268E6B00A97D25 /* FacebookSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9868B28171D11F80021AB7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C1E35F17210E0200A97D25 /* CoreLocation.framework in Frameworks */,
+				B9868B2E171D11F80021AB7F /* SenTestingKit.framework in Frameworks */,
+				B9868B2F171D11F80021AB7F /* UIKit.framework in Frameworks */,
+				B9868B30171D11F80021AB7F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B9868AFA171D11F70021AB7F = {
+			isa = PBXGroup;
+			children = (
+				B9C1E38C1726969E00A97D25 /* Accounts.framework */,
+				B9C1E38A172695FF00A97D25 /* Security.framework */,
+				B9C1E386172695AD00A97D25 /* libsqlite3.dylib */,
+				B9C1E3841726954900A97D25 /* AdSupport.framework */,
+				B9C1E37E17268E0400A97D25 /* Social.framework */,
+				B9C1E3671725349000A97D25 /* SystemConfiguration.framework */,
+				B9C1E3651725342E00A97D25 /* CFNetwork.framework */,
+				B9C1E35E17210E0200A97D25 /* CoreLocation.framework */,
+				B9868B0C171D11F70021AB7F /* GamesWrapper */,
+				B9868B33171D11F80021AB7F /* GamesWrapperTests */,
+				B9868B05171D11F70021AB7F /* Frameworks */,
+				B9868B04171D11F70021AB7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B9868B04171D11F70021AB7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B9868B03171D11F70021AB7F /* GamesWrapper.app */,
+				B9868B2C171D11F80021AB7F /* GamesWrapperTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B9868B05171D11F70021AB7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9C1E388172695D400A97D25 /* FacebookSDKResources.bundle */,
+				B9C1E38217268E6B00A97D25 /* FacebookSDK.framework */,
+				B9868B06171D11F70021AB7F /* UIKit.framework */,
+				B9868B08171D11F70021AB7F /* Foundation.framework */,
+				B9868B0A171D11F70021AB7F /* CoreGraphics.framework */,
+				B9868B2D171D11F80021AB7F /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9868B0C171D11F70021AB7F /* GamesWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				B9C1E361172520F300A97D25 /* InternetConnectivity */,
+				B9868B15171D11F70021AB7F /* GMAppDelegate.h */,
+				B9868B16171D11F70021AB7F /* GMAppDelegate.m */,
+				B9868B1E171D11F70021AB7F /* GMViewController.h */,
+				B9868B1F171D11F70021AB7F /* GMViewController.m */,
+				B9868B21171D11F70021AB7F /* GMViewController_iPhone.xib */,
+				B9868B24171D11F70021AB7F /* GMViewController_iPad.xib */,
+				B9868B0D171D11F70021AB7F /* Supporting Files */,
+			);
+			path = GamesWrapper;
+			sourceTree = "<group>";
+		};
+		B9868B0D171D11F70021AB7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9C1E38E172697CB00A97D25 /* Images */,
+				B9868B0E171D11F70021AB7F /* GamesWrapper-Info.plist */,
+				B99989F0171D58810014E04F /* UrlFile.plist */,
+				B9868B0F171D11F70021AB7F /* InfoPlist.strings */,
+				B9868B12171D11F70021AB7F /* main.m */,
+				B9868B14171D11F70021AB7F /* GamesWrapper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9868B33171D11F80021AB7F /* GamesWrapperTests */ = {
+			isa = PBXGroup;
+			children = (
+				B9868B39171D11F80021AB7F /* GamesWrapperTests.h */,
+				B9868B3A171D11F80021AB7F /* GamesWrapperTests.m */,
+				B9868B34171D11F80021AB7F /* Supporting Files */,
+			);
+			path = GamesWrapperTests;
+			sourceTree = "<group>";
+		};
+		B9868B34171D11F80021AB7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9868B35171D11F80021AB7F /* GamesWrapperTests-Info.plist */,
+				B9868B36171D11F80021AB7F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9C1E361172520F300A97D25 /* InternetConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				B9C1E362172520F300A97D25 /* Reachability.h */,
+				B9C1E363172520F300A97D25 /* Reachability.m */,
+			);
+			path = InternetConnectivity;
+			sourceTree = "<group>";
+		};
+		B9C1E38E172697CB00A97D25 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B9C1E3A7172698BD00A97D25 /* Default-Portrait@2x~ipad.png */,
+				B9C1E3A5172698AF00A97D25 /* Default-Portrait~ipad.png */,
+				B9C1E3A31726985E00A97D25 /* app_icon@2x.png */,
+				B9C1E3A11726983A00A97D25 /* app_icon.png */,
+				B9C1E391172697CB00A97D25 /* app_icon_ipad.png */,
+				B9C1E392172697CB00A97D25 /* app_icon_ipad@2x.png */,
+				B9C1E393172697CB00A97D25 /* Default-568h@2x.png */,
+				B9C1E394172697CB00A97D25 /* Default.png */,
+				B9C1E395172697CB00A97D25 /* Default@2x.png */,
+				B9C1E396172697CB00A97D25 /* splash_768x1024.png */,
+				B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9868B02171D11F70021AB7F /* GamesWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9868B3E171D11F80021AB7F /* Build configuration list for PBXNativeTarget "GamesWrapper" */;
+			buildPhases = (
+				B9868AFF171D11F70021AB7F /* Sources */,
+				B9868B00171D11F70021AB7F /* Frameworks */,
+				B9868B01171D11F70021AB7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GamesWrapper;
+			productName = GamesWrapper;
+			productReference = B9868B03171D11F70021AB7F /* GamesWrapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B9868B2B171D11F80021AB7F /* GamesWrapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9868B41171D11F80021AB7F /* Build configuration list for PBXNativeTarget "GamesWrapperTests" */;
+			buildPhases = (
+				B9868B27171D11F80021AB7F /* Sources */,
+				B9868B28171D11F80021AB7F /* Frameworks */,
+				B9868B29171D11F80021AB7F /* Resources */,
+				B9868B2A171D11F80021AB7F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9868B32171D11F80021AB7F /* PBXTargetDependency */,
+			);
+			name = GamesWrapperTests;
+			productName = GamesWrapperTests;
+			productReference = B9868B2C171D11F80021AB7F /* GamesWrapperTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B9868AFB171D11F70021AB7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Madhusudhan HK";
+			};
+			buildConfigurationList = B9868AFE171D11F70021AB7F /* Build configuration list for PBXProject "GamesWrapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B9868AFA171D11F70021AB7F;
+			productRefGroup = B9868B04171D11F70021AB7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9868B02171D11F70021AB7F /* GamesWrapper */,
+				B9868B2B171D11F80021AB7F /* GamesWrapperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9868B01171D11F70021AB7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9868B11171D11F70021AB7F /* InfoPlist.strings in Resources */,
+				B9868B23171D11F70021AB7F /* GMViewController_iPhone.xib in Resources */,
+				B9868B26171D11F70021AB7F /* GMViewController_iPad.xib in Resources */,
+				B99989F1171D58810014E04F /* UrlFile.plist in Resources */,
+				B9C1E389172695D400A97D25 /* FacebookSDKResources.bundle in Resources */,
+				B9C1E39A172697CB00A97D25 /* app_icon_ipad.png in Resources */,
+				B9C1E39B172697CB00A97D25 /* app_icon_ipad@2x.png in Resources */,
+				B9C1E39C172697CB00A97D25 /* Default-568h@2x.png in Resources */,
+				B9C1E39D172697CB00A97D25 /* Default.png in Resources */,
+				B9C1E39E172697CB00A97D25 /* Default@2x.png in Resources */,
+				B9C1E39F172697CB00A97D25 /* splash_768x1024.png in Resources */,
+				B9C1E3A0172697CB00A97D25 /* splash_768x1024@2x.png in Resources */,
+				B9C1E3A21726983A00A97D25 /* app_icon.png in Resources */,
+				B9C1E3A41726985F00A97D25 /* app_icon@2x.png in Resources */,
+				B9C1E3A6172698B000A97D25 /* Default-Portrait~ipad.png in Resources */,
+				B9C1E3A8172698BD00A97D25 /* Default-Portrait@2x~ipad.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9868B29171D11F80021AB7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9868B38171D11F80021AB7F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9868B2A171D11F80021AB7F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B9868AFF171D11F70021AB7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9868B13171D11F70021AB7F /* main.m in Sources */,
+				B9868B17171D11F70021AB7F /* GMAppDelegate.m in Sources */,
+				B9868B20171D11F70021AB7F /* GMViewController.m in Sources */,
+				B9C1E364172520F300A97D25 /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9868B27171D11F80021AB7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9868B3B171D11F80021AB7F /* GamesWrapperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B9868B32171D11F80021AB7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9868B02171D11F70021AB7F /* GamesWrapper */;
+			targetProxy = B9868B31171D11F80021AB7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B9868B0F171D11F70021AB7F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9868B10171D11F70021AB7F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B9868B21171D11F70021AB7F /* GMViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9868B22171D11F70021AB7F /* en */,
+			);
+			name = GMViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		B9868B24171D11F70021AB7F /* GMViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9868B25171D11F70021AB7F /* en */,
+			);
+			name = GMViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		B9868B36171D11F80021AB7F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9868B37171D11F80021AB7F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B9868B3C171D11F80021AB7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B9868B3D171D11F80021AB7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9868B3F171D11F80021AB7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GamesWrapper/GamesWrapper-Prefix.pch";
+				INFOPLIST_FILE = "GamesWrapper/GamesWrapper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B9868B40171D11F80021AB7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GamesWrapper/GamesWrapper-Prefix.pch";
+				INFOPLIST_FILE = "GamesWrapper/GamesWrapper-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B9868B42171D11F80021AB7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GamesWrapper.app/GamesWrapper";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GamesWrapper/GamesWrapper-Prefix.pch";
+				INFOPLIST_FILE = "GamesWrapperTests/GamesWrapperTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B9868B43171D11F80021AB7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GamesWrapper.app/GamesWrapper";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GamesWrapper/GamesWrapper-Prefix.pch";
+				INFOPLIST_FILE = "GamesWrapperTests/GamesWrapperTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9868AFE171D11F70021AB7F /* Build configuration list for PBXProject "GamesWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9868B3C171D11F80021AB7F /* Debug */,
+				B9868B3D171D11F80021AB7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9868B3E171D11F80021AB7F /* Build configuration list for PBXNativeTarget "GamesWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9868B3F171D11F80021AB7F /* Debug */,
+				B9868B40171D11F80021AB7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9868B41171D11F80021AB7F /* Build configuration list for PBXNativeTarget "GamesWrapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9868B42171D11F80021AB7F /* Debug */,
+				B9868B43171D11F80021AB7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B9868AFB171D11F70021AB7F /* Project object */;
+}
