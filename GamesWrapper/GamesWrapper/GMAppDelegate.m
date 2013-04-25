@@ -10,7 +10,7 @@
 
 #import "GMViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
-#define Facebook_APP_ID @"150038098508329"
+#define Facebook_APP_ID @"150038098508329" // TODO :: updated new LBR account app id 
 
 @implementation GMAppDelegate
 @synthesize locationManager;
@@ -18,11 +18,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    // registor for Facebook Ad
+    // registor for Facebook Ad With Facebook App id 
     
     [FBSettings publishInstall:Facebook_APP_ID];
     
-    
+    // registor app to location service ,  to find current location of device 
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -33,6 +33,8 @@
     
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     
+    
+    // load splash screen 
     [self setUpSplash];
     
     
@@ -67,6 +69,10 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+// Add splash screen on Window 
+
 -(void) setUpSplash {
     
     
@@ -100,6 +106,9 @@
     
     
 }
+
+// set GMViewController as window's rootviewController to load UIWebView
+
 -(void) setUpRootViewController {
     
     if(splashImgView) [splashImgView removeFromSuperview];
@@ -120,6 +129,8 @@
     
     
 }
+
+// get user current loaction 
 -(void)getCurrentLocation{
  
     
@@ -141,7 +152,7 @@
          NSLog(@"region : %@", placemark.region);
          
          
-         
+         // check user location is UK , if Yes set 
          
          if([placemark.country isEqualToString:@"United Kingdom"]){
              

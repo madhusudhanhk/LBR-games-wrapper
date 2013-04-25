@@ -41,10 +41,10 @@
 		B9C1E39E172697CB00A97D25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E395172697CB00A97D25 /* Default@2x.png */; };
 		B9C1E39F172697CB00A97D25 /* splash_768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E396172697CB00A97D25 /* splash_768x1024.png */; };
 		B9C1E3A0172697CB00A97D25 /* splash_768x1024@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */; };
-		B9C1E3A21726983A00A97D25 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A11726983A00A97D25 /* app_icon.png */; };
-		B9C1E3A41726985F00A97D25 /* app_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A31726985E00A97D25 /* app_icon@2x.png */; };
 		B9C1E3A6172698B000A97D25 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A5172698AF00A97D25 /* Default-Portrait~ipad.png */; };
 		B9C1E3A8172698BD00A97D25 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E3A7172698BD00A97D25 /* Default-Portrait@2x~ipad.png */; };
+		B9C475EC1727BFBC00456DFE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C475EA1727BFBC00456DFE /* icon.png */; };
+		B9C475ED1727BFBC00456DFE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C475EB1727BFBC00456DFE /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,10 +98,10 @@
 		B9C1E395172697CB00A97D25 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B9C1E396172697CB00A97D25 /* splash_768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_768x1024.png; sourceTree = "<group>"; };
 		B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_768x1024@2x.png"; sourceTree = "<group>"; };
-		B9C1E3A11726983A00A97D25 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app_icon.png; path = ../../app_icon.png; sourceTree = "<group>"; };
-		B9C1E3A31726985E00A97D25 /* app_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app_icon@2x.png"; path = "../../app_icon@2x.png"; sourceTree = "<group>"; };
 		B9C1E3A5172698AF00A97D25 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		B9C1E3A7172698BD00A97D25 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		B9C475EA1727BFBC00456DFE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B9C475EB1727BFBC00456DFE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,10 +237,10 @@
 		B9C1E38E172697CB00A97D25 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B9C475EA1727BFBC00456DFE /* icon.png */,
+				B9C475EB1727BFBC00456DFE /* icon@2x.png */,
 				B9C1E3A7172698BD00A97D25 /* Default-Portrait@2x~ipad.png */,
 				B9C1E3A5172698AF00A97D25 /* Default-Portrait~ipad.png */,
-				B9C1E3A31726985E00A97D25 /* app_icon@2x.png */,
-				B9C1E3A11726983A00A97D25 /* app_icon.png */,
 				B9C1E391172697CB00A97D25 /* app_icon_ipad.png */,
 				B9C1E392172697CB00A97D25 /* app_icon_ipad@2x.png */,
 				B9C1E393172697CB00A97D25 /* Default-568h@2x.png */,
@@ -336,10 +336,10 @@
 				B9C1E39E172697CB00A97D25 /* Default@2x.png in Resources */,
 				B9C1E39F172697CB00A97D25 /* splash_768x1024.png in Resources */,
 				B9C1E3A0172697CB00A97D25 /* splash_768x1024@2x.png in Resources */,
-				B9C1E3A21726983A00A97D25 /* app_icon.png in Resources */,
-				B9C1E3A41726985F00A97D25 /* app_icon@2x.png in Resources */,
 				B9C1E3A6172698B000A97D25 /* Default-Portrait~ipad.png in Resources */,
 				B9C1E3A8172698BD00A97D25 /* Default-Portrait@2x~ipad.png in Resources */,
+				B9C475EC1727BFBC00456DFE /* icon.png in Resources */,
+				B9C475ED1727BFBC00456DFE /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,8 +516,8 @@
 		B9868B40171D11F80021AB7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Aditi Technologies";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aditi Technologies";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -527,8 +527,8 @@
 				INFOPLIST_FILE = "GamesWrapper/GamesWrapper-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
+				PROVISIONING_PROFILE = "8063F3A5-E26F-4FBC-8566-425468AB43EB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8063F3A5-E26F-4FBC-8566-425468AB43EB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

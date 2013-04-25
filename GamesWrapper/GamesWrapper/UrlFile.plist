@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>test</key>
-	<string>http://tst-mobile.ladbrokes.com/</string>
+	<string>http://tst-mobile.ladbrokes.com/games</string>
 	<key>live</key>
-	<string>http://mobile.ladbrokes.com/</string>
+	<string>http://mobile.ladbrokes.com/games</string>
 	<key>dev</key>
-	<string>http://dev-mobile.ladbrokes.com/</string>
+	<string>http://dev-mobile.ladbrokes.com/games</string>
 </dict>
 </plist>
