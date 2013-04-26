@@ -10,6 +10,7 @@
 
 #import "GMViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+
 #define Facebook_APP_ID @"150038098508329" // TODO :: updated new LBR account app id 
 
 @implementation GMAppDelegate
@@ -59,7 +60,16 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    [self locationServicesIsEnabled];
+    
+    
+    if(![userLocation isEqualToString:@"United Kingdom"]){
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://mobile.ladbrokes.com/games"]];
+    }else{
+          [self locationServicesIsEnabled];
+    }
+    
+  
     
 }
 
@@ -168,6 +178,9 @@
        //  NSLog(@"region : %@", placemark.region);
          
          
+         userLocation = placemark.country;
+         
+         
          /* check user location is UK ,
          if Yes set rootViewController and launch WebView , 
          else redirect to safari */
@@ -191,7 +204,7 @@
 
 -(void) launchSafariFromApp {
     
-    NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/"];
+    NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/games"];
     
     if (![[UIApplication sharedApplication] openURL:url])
         NSLog(@"%@%@",@"Failed to open url:",[url description]);

@@ -14,6 +14,9 @@
 @interface GMAppDelegate : UIResponder <UIApplicationDelegate , CLLocationManagerDelegate>{
     
      UIImageView *splashImgView;
+     NSString *userLocation;
+    
+    
 }
 
 @property (strong, nonatomic) UIWindow *window;
