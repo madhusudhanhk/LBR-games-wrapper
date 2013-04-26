@@ -18,24 +18,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    // registor for Facebook Ad With Facebook App id 
+    /* registor for Facebook Ad With Facebook App id */
     
     [FBSettings publishInstall:Facebook_APP_ID];
     
-    // registor app to location service ,  to find current location of device 
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-   // [locationManager startUpdatingLocation];
-    locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
     
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    
-    
-    // load splash screen 
+    /* load splash screen */
     [self setUpSplash];
+    
+    
+    /*  registor app to location service ,  to find current location of device */
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    
+    [self.locationManager startUpdatingLocation];
+    
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+
     
     
     return YES;
@@ -71,7 +74,7 @@
 }
 
 
-// Add splash screen on Window 
+/* Add splash screen on Window */
 
 -(void) setUpSplash {
     
@@ -107,7 +110,8 @@
     
 }
 
-// set GMViewController as window's rootviewController to load UIWebView
+/* set GMViewController as window's rootviewController to load UIWebView */
+
 
 -(void) setUpRootViewController {
     
@@ -130,7 +134,8 @@
     
 }
 
-// get user current loaction 
+/*  get user current loaction */
+
 -(void)getCurrentLocation{
  
     
@@ -138,9 +143,20 @@
     
     CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
     
-    [geocoder reverseGeocodeLocation: locationManager.location completionHandler:
+    [geocoder reverseGeocodeLocation: self.locationManager.location completionHandler:
      ^(NSArray *placemarks, NSError *error) {
          
+         
+         if(error){
+          
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Can't find current location" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+             
+             [alertView show];
+             
+             return ;
+             
+             
+         }
          
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
          
@@ -149,10 +165,12 @@
          NSLog(@"country : %@",placemark.country);
          NSLog(@"locality : %@",placemark.locality);
          NSLog(@"sublocality : %@",placemark.subLocality);
-         NSLog(@"region : %@", placemark.region);
+       //  NSLog(@"region : %@", placemark.region);
          
          
-         // check user location is UK , if Yes set 
+         /* check user location is UK ,
+         if Yes set rootViewController and launch WebView , 
+         else redirect to safari */
          
          if([placemark.country isEqualToString:@"United Kingdom"]){
              
@@ -169,6 +187,8 @@
     
 }
 
+/* method to launch safari */
+
 -(void) launchSafariFromApp {
     
     NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/"];
@@ -178,6 +198,10 @@
     
     
 }
+
+/* check for location service status */
+
+
 -(BOOL)locationServicesIsEnabled
 {
    
@@ -200,6 +224,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
  
+  
+    
+    
         if (status== kCLAuthorizationStatusAuthorized)
             {
         

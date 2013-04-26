@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *myWebView;
 @property (strong, nonatomic) IBOutlet UIImageView *splashImage;
-@property (strong, nonatomic) NSMutableArray *myArray;
+
 
 
 

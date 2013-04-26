@@ -19,7 +19,7 @@
 @implementation GMViewController
 @synthesize myWebView;
 @synthesize splashImage;
-@synthesize myArray;
+
 
 
 - (void)viewDidLoad
@@ -29,20 +29,22 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
     
+    
+    /* check for internet connection */
+    
     if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] != kNotReachable) {
     
+        NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"UrlFile" ofType:@"plist"];
+        NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+        [self loadWebViewWithUrl:[dict valueForKey:@"live"]];
+        
+        
     }else {
     
         UIAlertView *alt = [[UIAlertView alloc]initWithTitle:nil message:@"You need to be connected to the internet to proceed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alt    show];
     }
-    
-    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"UrlFile" ofType:@"plist"];
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    [self loadWebViewWithUrl:[dict valueForKey:@"live"]];
-    
- 
-    
+        
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,10 +84,12 @@
     
     NSLog(@"finish load");
     
+    
+    /* hide splashImage once Webview is loaded */
     splashImage.hidden=YES;
     
-    NSLog(@"image frame %@", NSStringFromCGRect(splashImage.frame));
-    NSLog(@"webview frame %@", NSStringFromCGRect(myWebView.frame));
+    //NSLog(@"image frame %@", NSStringFromCGRect(splashImage.frame));
+   // NSLog(@"webview frame %@", NSStringFromCGRect(myWebView.frame));
     
     
 }

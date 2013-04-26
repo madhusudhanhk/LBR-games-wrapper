@@ -1,4 +1,4 @@
-//
+	//
 //  GamesWrapperTests.h
 //  GamesWrapperTests
 //
@@ -7,7 +7,14 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-
-@interface GamesWrapperTests : SenTestCase
+#import "GMAppDelegate.h"
+#import "GMViewController.h"
+@interface GamesWrapperTests : SenTestCase  <CLLocationManagerDelegate>{
+    
+    GMAppDelegate *myAppDelegate;
+    GMViewController *myViewController;
+    UIView *myView;
+    
+}
 
 @end
