@@ -32,70 +32,31 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-   // GMViewController *otherViewCntrl = [GMViewController new];
-    
-    STAssertEqualObjects(0,  0, @"both array equal");
-    
-    //STFail(@"Unit tests are not implemented yet in GamesWrapperTests");
-}
+
 
 
 - (void) testAppDelegate {
     STAssertNotNil(myAppDelegate, @"Cannot find the application delegate");
 }
 
-- (void) testLocationManagerAlerView{
-    
-    id<CLLocationManagerDelegate> delegate = [myAppDelegate.locationManager delegate];
-    
-    [delegate locationManager:myAppDelegate.locationManager didChangeAuthorizationStatus:kCLAuthorizationStatusAuthorized];
-    
 
+- (void) testUserCurrentLocation{
     
+   
+   /* TO DO : for testing US latt : 37.33233141 , long : -122.0312186 */
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:51.5 longitude:-0.116666666666667];
+    
+   
+    NSString *currentLocation = [myAppDelegate getCurrentLocation:location];
+    
+    STAssertTrue([currentLocation isEqualToString:@"United Kingdom"], @"Device's current location is not United Kingdom");
+    
+   
     
     
     
 }
 
-
-
-#pragma mark CLLocationManager delegate
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
-    
-    
-    
-    
-    if (status== kCLAuthorizationStatusAuthorized)
-    {
-        
-       
-        
-    }else if (status == kCLAuthorizationStatusDenied)
-    {
-        
-       
-        
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    if ([error code]== kCLAuthorizationStatusDenied)
-    {
-        
-        
-        
-    }
-}
 
 
 @end

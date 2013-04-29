@@ -25,7 +25,11 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
--(void)getCurrentLocation;
+@property (strong , nonatomic)  NSString *userLocation;
+
+
+-(NSString *) getCurrentLocation : (CLLocation *)location;
+
 -(void) setUpSplash ;
 -(void) setUpRootViewController ;
 -(void) launchSafariFromApp ;

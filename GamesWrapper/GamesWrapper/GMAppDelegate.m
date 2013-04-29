@@ -15,6 +15,8 @@
 
 @implementation GMAppDelegate
 @synthesize locationManager;
+@synthesize userLocation;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -62,7 +64,7 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     
     
-    if(![userLocation isEqualToString:@"United Kingdom"]){
+    if(![self.userLocation isEqualToString:@"United Kingdom"]){
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://mobile.ladbrokes.com/games"]];
     }else{
@@ -146,57 +148,70 @@
 
 /*  get user current loaction */
 
--(void)getCurrentLocation{
- 
+-(NSString *) getCurrentLocation : (CLLocation *)location;{
     
-   
+    
+    __block NSString *currentLocation = @"";
     
     CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
     
-    [geocoder reverseGeocodeLocation: self.locationManager.location completionHandler:
+    
+    
+    
+    [geocoder reverseGeocodeLocation: location completionHandler:
      ^(NSArray *placemarks, NSError *error) {
          
          
-         if(error){
-          
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Can't find current location" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        
+         if(! error){
+             
+             
+             CLPlacemark *placemark = [placemarks objectAtIndex:0];
+             
+             
+             NSLog(@"isoCountryCode %@", placemark.ISOcountryCode);
+             NSLog(@"country : %@",placemark.country);
+             NSLog(@"locality : %@",placemark.locality);
+             NSLog(@"sublocality : %@",placemark.subLocality);
+             //  NSLog(@"region : %@", placemark.region);
+             
+             
+             
+             self.userLocation = placemark.country;
+             currentLocation = placemark.country;
+             
+             
+                          
+         }else{
+             
+             NSLog(@"failed getting city: %@", [error description]);
+             
+             
+             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Can't find current location" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
              
              [alertView show];
              
+             
+             
              return ;
-             
-             
+
          }
-         
-         CLPlacemark *placemark = [placemarks objectAtIndex:0];
-         
-         
-         NSLog(@"isoCountryCode %@", placemark.ISOcountryCode);
-         NSLog(@"country : %@",placemark.country);
-         NSLog(@"locality : %@",placemark.locality);
-         NSLog(@"sublocality : %@",placemark.subLocality);
-       //  NSLog(@"region : %@", placemark.region);
-         
-         
-         userLocation = placemark.country;
-         
-         
-         /* check user location is UK ,
-         if Yes set rootViewController and launch WebView , 
-         else redirect to safari */
-         
-         if([placemark.country isEqualToString:@"United Kingdom"]){
-             
-             [self setUpRootViewController];
-             
-             
-         }else {
-             
-             [self launchSafariFromApp];
-         }
+        
          
      }];
 
+    
+    while ([currentLocation isEqualToString:@""]){
+        NSLog(@"%@", currentLocation);
+        
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+    }
+    
+    
+    
+    return currentLocation;
+    
+  
     
 }
 
@@ -225,7 +240,7 @@
         || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied))
     {
         // Send the user to the safari with following url
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://mobile.ladbrokes.com/"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://mobile.ladbrokes.com/games"]];
         return NO;
     }
     return YES;
@@ -243,7 +258,28 @@
         if (status== kCLAuthorizationStatusAuthorized)
             {
         
-                [self performSelector:@selector(getCurrentLocation)];
+                
+              NSString *currentLocation =   [self performSelector:@selector(getCurrentLocation:) withObject:manager.location];
+                
+                /* check user location is UK ,
+                 if Yes set rootViewController and launch WebView ,
+                 else redirect to safari */
+                
+                if([currentLocation isEqualToString:@"United Kingdom"]){
+                    
+                    
+                    [self setUpRootViewController];
+                    
+                    
+                }else {
+                    
+                    [self launchSafariFromApp];
+                    
+                    
+                    
+                }
+
+                
         
         }else if (status == kCLAuthorizationStatusDenied)
             {
@@ -263,8 +299,6 @@
 {
     if ([error code]== kCLAuthorizationStatusDenied)
     {
-        
-      
         
     }
 }
