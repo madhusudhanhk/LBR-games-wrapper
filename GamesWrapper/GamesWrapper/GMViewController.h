@@ -18,6 +18,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *splashImage;
 
 
-
+-(NSString *)loadWebViewWithUrl:(NSString *)newUrl;
 
 @end

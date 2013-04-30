@@ -9,6 +9,10 @@
 #import "GamesWrapperTests.h"
 #import "GMViewController.h"
 #import "GMAppDelegate.h"
+
+#define kGamesUrl @"http://mobile.ladbrokes.com/games"
+
+
 @implementation GamesWrapperTests
 
 - (void)setUp
@@ -52,11 +56,17 @@
     STAssertTrue([currentLocation isEqualToString:@"United Kingdom"], @"Device's current location is not United Kingdom");
     
    
+}
+
+-(void) testWebView{
+    
+    
+    NSString *returnsUrl = [myViewController loadWebViewWithUrl:kGamesUrl];
+    
+    STAssertTrue([returnsUrl isEqualToString:kGamesUrl], @"Cannot find expeted url from UIWebView");
     
     
     
 }
-
-
 
 @end

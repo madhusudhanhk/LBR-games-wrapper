@@ -11,7 +11,7 @@
 
 @interface GMViewController ()
 
--(void)loadWebViewWithUrl:(NSString *)newUrl;
+
 
 
 @end
@@ -36,8 +36,9 @@
     
         NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"UrlFile" ofType:@"plist"];
         NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-        [self loadWebViewWithUrl:[dict valueForKey:@"live"]];
+       [self loadWebViewWithUrl:[dict valueForKey:@"live"]];
         
+    
         
     }else {
     
@@ -53,8 +54,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)loadWebViewWithUrl:(NSString *)newUrl{
-    
+-(NSString *)loadWebViewWithUrl:(NSString *)newUrl{
     
     NSString *urlAddress = newUrl;
     
@@ -66,6 +66,8 @@
     
     //Load the request in the UIWebView.
     [myWebView loadRequest:requestObj];
+     return [requestObj.URL absoluteString];
+    
     
 }
 #pragma mark UIWebView delegate 
@@ -87,6 +89,7 @@
     
     /* hide splashImage once Webview is loaded */
     splashImage.hidden=YES;
+    NSLog(@"url %@",[webView.request.URL absoluteString]);
     
     //NSLog(@"image frame %@", NSStringFromCGRect(splashImage.frame));
    // NSLog(@"webview frame %@", NSStringFromCGRect(myWebView.frame));
