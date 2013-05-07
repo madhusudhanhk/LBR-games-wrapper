@@ -10,12 +10,14 @@
 
 #import "GMViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "Flurry.h"
 
-#define Facebook_APP_ID @"150038098508329" // TODO :: updated new LBR account app id 
+
+
 
 @implementation GMAppDelegate
-@synthesize locationManager;
-@synthesize userLocation;
+@synthesize locationManager = _locationManager;
+@synthesize userLocation = _userLocation;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -23,7 +25,17 @@
     
     /* registor for Facebook Ad With Facebook App id */
     
+    [FBSession.activeSession isOpen];
     [FBSettings publishInstall:Facebook_APP_ID];
+    
+    /* registor for Flurry analytics with Flurry_API_KEY */
+    
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    [Flurry startSession:Flurry_API_KEY];
+    [Flurry logEvent:Flurry_Applaunched timed:YES];
+    
+   
+
     
     
     /* load splash screen */
@@ -41,8 +53,6 @@
     [self.locationManager startUpdatingLocation];
     
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-
-    
     
     return YES;
 }
@@ -57,12 +67,19 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    /* end the settion and report to flurry */
+    
+    [Flurry endTimedEvent:Flurry_AppClosed withParameters:nil];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     
+    /* start the session */
+    
+    [Flurry logEvent:@"LBR games wrapper App active" timed:YES];
     
     if(![self.userLocation isEqualToString:@"United Kingdom"]){
         
@@ -126,6 +143,8 @@
 
 
 -(void) setUpRootViewController {
+    
+     [Flurry logEvent:Flurry_UIWebViewLaunched timed:YES];
     
     if(splashImgView) [splashImgView removeFromSuperview];
     
@@ -219,6 +238,9 @@
 
 -(void) launchSafariFromApp {
     
+    
+     [Flurry logEvent:Flurry_SafariLaunched timed:YES];
+    
     NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/games"];
     
     if (![[UIApplication sharedApplication] openURL:url])
@@ -257,7 +279,8 @@
     
         if (status== kCLAuthorizationStatusAuthorized)
             {
-        
+               
+                 [Flurry logEvent:Flurry_LocationManagerAllow timed:YES];
                 
               NSString *currentLocation =   [self performSelector:@selector(getCurrentLocation:) withObject:manager.location];
                 
@@ -283,7 +306,7 @@
         
         }else if (status == kCLAuthorizationStatusDenied)
             {
-        
+                    [Flurry logEvent:Flurry_LocationManagerDontAllow timed:YES];
                     [self performSelector:@selector(launchSafariFromApp)];
         
             }
@@ -302,4 +325,12 @@
         
     }
 }
+
+#pragma mark Flurry methods
+
+void uncaughtExceptionHandler(NSException *exception) {
+    [Flurry logError:@"Uncaught" message:@"Crash!" exception:exception];
+}
+
+
 @end
