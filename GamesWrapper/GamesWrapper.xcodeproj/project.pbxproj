@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B96413CD1742352500908B3E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CC1742352500908B3E /* Default.png */; };
+		B96413D01742373000908B3E /* btn-launchwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CE1742373000908B3E /* btn-launchwebsite.png */; };
+		B96413D11742373000908B3E /* btn_tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CF1742373000908B3E /* btn_tryagain.png */; };
+		B96413D417424C4A00908B3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B96413D317424C4A00908B3E /* MBProgressHUD.m */; };
+		B96413D517424D7C00908B3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B96413D317424C4A00908B3E /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B9868B07171D11F70021AB7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B06171D11F70021AB7F /* UIKit.framework */; };
 		B9868B09171D11F70021AB7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B08171D11F70021AB7F /* Foundation.framework */; };
 		B9868B0B171D11F70021AB7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B0A171D11F70021AB7F /* CoreGraphics.framework */; };
@@ -37,7 +42,6 @@
 		B9C1E39A172697CB00A97D25 /* app_icon_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E391172697CB00A97D25 /* app_icon_ipad.png */; };
 		B9C1E39B172697CB00A97D25 /* app_icon_ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E392172697CB00A97D25 /* app_icon_ipad@2x.png */; };
 		B9C1E39C172697CB00A97D25 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E393172697CB00A97D25 /* Default-568h@2x.png */; };
-		B9C1E39D172697CB00A97D25 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E394172697CB00A97D25 /* Default.png */; };
 		B9C1E39E172697CB00A97D25 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E395172697CB00A97D25 /* Default@2x.png */; };
 		B9C1E39F172697CB00A97D25 /* splash_768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E396172697CB00A97D25 /* splash_768x1024.png */; };
 		B9C1E3A0172697CB00A97D25 /* splash_768x1024@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */; };
@@ -171,7 +175,6 @@
 		B9C475EC1727BFBC00456DFE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C475EA1727BFBC00456DFE /* icon.png */; };
 		B9C475ED1727BFBC00456DFE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C475EB1727BFBC00456DFE /* icon@2x.png */; };
 		B9C47759172A425300456DFE /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C47757172A425300456DFE /* Default-Portrait@2x~ipad.png */; };
-		B9C4775A172A425300456DFE /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C47758172A425300456DFE /* Default-Portrait~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +188,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B96413CC1742352500908B3E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B96413CE1742373000908B3E /* btn-launchwebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-launchwebsite.png"; sourceTree = "<group>"; };
+		B96413CF1742373000908B3E /* btn_tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_tryagain.png; sourceTree = "<group>"; };
+		B96413D217424C4A00908B3E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B96413D317424C4A00908B3E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B9868B03171D11F70021AB7F /* GamesWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9868B06171D11F70021AB7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9868B08171D11F70021AB7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -401,6 +409,7 @@
 		B9868AFA171D11F70021AB7F = {
 			isa = PBXGroup;
 			children = (
+				B96413CC1742352500908B3E /* Default.png */,
 				B9868B0C171D11F70021AB7F /* GamesWrapper */,
 				B9868B33171D11F80021AB7F /* GamesWrapperTests */,
 				B9868B05171D11F70021AB7F /* Frameworks */,
@@ -490,6 +499,8 @@
 		B9ADDAEF1738FA0B00BD041B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B96413D217424C4A00908B3E /* MBProgressHUD.h */,
+				B96413D317424C4A00908B3E /* MBProgressHUD.m */,
 				B9ADDAF01738FA2800BD041B /* GMConstants.h */,
 			);
 			name = Utilities;
@@ -508,6 +519,8 @@
 			isa = PBXGroup;
 			children = (
 				B9C47757172A425300456DFE /* Default-Portrait@2x~ipad.png */,
+				B96413CE1742373000908B3E /* btn-launchwebsite.png */,
+				B96413CF1742373000908B3E /* btn_tryagain.png */,
 				B9C47758172A425300456DFE /* Default-Portrait~ipad.png */,
 				B9C475EA1727BFBC00456DFE /* icon.png */,
 				B9C475EB1727BFBC00456DFE /* icon@2x.png */,
@@ -819,14 +832,12 @@
 				B9C1E39A172697CB00A97D25 /* app_icon_ipad.png in Resources */,
 				B9C1E39B172697CB00A97D25 /* app_icon_ipad@2x.png in Resources */,
 				B9C1E39C172697CB00A97D25 /* Default-568h@2x.png in Resources */,
-				B9C1E39D172697CB00A97D25 /* Default.png in Resources */,
 				B9C1E39E172697CB00A97D25 /* Default@2x.png in Resources */,
 				B9C1E39F172697CB00A97D25 /* splash_768x1024.png in Resources */,
 				B9C1E3A0172697CB00A97D25 /* splash_768x1024@2x.png in Resources */,
 				B9C475EC1727BFBC00456DFE /* icon.png in Resources */,
 				B9C475ED1727BFBC00456DFE /* icon@2x.png in Resources */,
 				B9C47759172A425300456DFE /* Default-Portrait@2x~ipad.png in Resources */,
-				B9C4775A172A425300456DFE /* Default-Portrait~ipad.png in Resources */,
 				B9C3087E172FA3C2008181B5 /* annotated.html in Resources */,
 				B9C30880172FA3C2008181B5 /* bc_s.png in Resources */,
 				B9C30881172FA3C2008181B5 /* bdwn.png in Resources */,
@@ -920,6 +931,9 @@
 				B9C308F9172FA3C2008181B5 /* Flurry_AppSpot_Publisher_Platform_TOS.pdf in Resources */,
 				B9C308FA172FA3C2008181B5 /* Jansson-LICENSE.txt in Resources */,
 				B9C308FB172FA3C2008181B5 /* ProjectApiKey.txt in Resources */,
+				B96413CD1742352500908B3E /* Default.png in Resources */,
+				B96413D01742373000908B3E /* btn-launchwebsite.png in Resources */,
+				B96413D11742373000908B3E /* btn_tryagain.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -954,6 +968,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B96413D517424D7C00908B3E /* MBProgressHUD.m in Sources */,
 				B9868B13171D11F70021AB7F /* main.m in Sources */,
 				B9868B17171D11F70021AB7F /* GMAppDelegate.m in Sources */,
 				B9868B20171D11F70021AB7F /* GMViewController.m in Sources */,
@@ -966,6 +981,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9868B3B171D11F80021AB7F /* GamesWrapperTests.m in Sources */,
+				B96413D417424C4A00908B3E /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,7 +1100,7 @@
 		B9868B3F171D11F80021AB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Aditi Technologies";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1100,7 +1116,7 @@
 					"\"$(SRCROOT)/GamesWrapper/Flurry iPhone SDK viPhone 4.2.1/Flurry-iOS-4.2.1/FlurryAds\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "75A8FDAF-E04D-4BB3-9586-2E23A0A6A550";
+				PROVISIONING_PROFILE = "8063F3A5-E26F-4FBC-8566-425468AB43EB";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "75A8FDAF-E04D-4BB3-9586-2E23A0A6A550";
 				WRAPPER_EXTENSION = app;
 			};

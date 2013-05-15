@@ -20,6 +20,7 @@
 @synthesize userLocation = _userLocation;
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -81,12 +82,14 @@
     
     [Flurry logEvent:@"LBR games wrapper App active" timed:YES];
     
+    /*
     if(![self.userLocation isEqualToString:@"United Kingdom"]){
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://mobile.ladbrokes.com/games"]];
     }else{
           [self locationServicesIsEnabled];
     }
+    */
     
   
     
@@ -100,6 +103,98 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+//setup Options page on window
+
+-(void) setUPOptionsPage {
+    
+    //UIView *iPhoneView;
+    UIImage *optionsImage;
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 30200
+    UIDevice* thisDevice = [UIDevice currentDevice];
+    if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
+    {
+        optionsImage =[UIImage imageNamed:@"splash_768x1024"];
+        
+        
+    }else if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+    {
+        
+        optionsImage =[UIImage imageNamed:@"default.png"];
+        
+    }
+#endif
+    
+    UIView *iPhoneView = [[UIView alloc] initWithFrame: CGRectMake ( self.window.frame.origin.x, self.window.frame.origin.y, screenWidth, screenHeight)];
+    optionsPage = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    [optionsPage setImage: optionsImage];
+    [iPhoneView addSubview:optionsPage];
+    float useValue = 0.0;
+    float buttonSpace =0.0;
+    if (screenHeight/10 > 100) {
+        useValue = 150.0;
+        buttonSpace = 80;
+    }
+    else{
+        useValue = 70.0;
+        buttonSpace = 40;
+    }
+    
+    CGRect frame = CGRectMake(buttonSpace/2, screenHeight-((screenHeight/10)*3.5), screenWidth-buttonSpace, screenHeight/10);
+    UIButton *tryAgainButton = [[UIButton alloc] initWithFrame:frame];
+    [tryAgainButton setBackgroundImage:[UIImage imageNamed:@"btn_tryagain"] forState:UIControlStateNormal];
+    [tryAgainButton addTarget:nil action:@selector(onClickTryAgain) forControlEvents:UIControlEventTouchUpInside];
+    CGRect frame1 = CGRectMake(buttonSpace/2, frame.origin.y+useValue, screenWidth-buttonSpace, screenHeight/10);
+    UIButton *launchWeb = [[UIButton alloc] initWithFrame:frame1];
+    [launchWeb setBackgroundImage:[UIImage imageNamed:@"btn-launchwebsite"] forState:UIControlStateNormal];
+    [launchWeb addTarget:nil action:@selector(onClickLaunchWebSite) forControlEvents:UIControlEventTouchUpInside];
+    [iPhoneView addSubview:tryAgainButton];
+    [iPhoneView addSubview:launchWeb];
+    //[iPhoneView bringSubviewToFront:launchWeb];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window addSubview: iPhoneView];
+    [self.window makeKeyAndVisible];
+    
+}
+
+
+/* Try again functionalitie in option page */
+
+- (void)onClickTryAgain{
+    
+    [self showProgressHudInView:self.window withTitle:@"Loading..." andMsg:nil];
+
+    
+    /* if location manager objects is exsists , make it nil  */
+    if(self.locationManager)self.locationManager=nil;
+    
+    
+    /*  registor app to location service ,  to find current location of device */
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    
+    [self.locationManager startUpdatingLocation];
+    
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    
+        
+}
+
+/* Launch Website functionalities in option page */
+
+- (void)onClickLaunchWebSite{
+    NSLog(@"Launch Website button pressed");
+    [self launchSafariFromApp];
+    
 }
 
 
@@ -270,6 +365,8 @@
     
 }
 
+
+
 #pragma mark CLLocationManager delegate
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
@@ -296,7 +393,8 @@
                     
                 }else {
                     
-                    [self launchSafariFromApp];
+                  //  [self launchSafariFromApp];
+                    [self setUPOptionsPage];
                     
                     
                     
@@ -307,7 +405,8 @@
         }else if (status == kCLAuthorizationStatusDenied)
             {
                     [Flurry logEvent:Flurry_LocationManagerDontAllow timed:YES];
-                    [self performSelector:@selector(launchSafariFromApp)];
+                   // [self performSelector:@selector(launchSafariFromApp)];
+                    [self performSelector:@selector(setUPOptionsPage)];
         
             }
 }
@@ -330,6 +429,21 @@
 
 void uncaughtExceptionHandler(NSException *exception) {
     [Flurry logError:@"Uncaught" message:@"Crash!" exception:exception];
+}
+
+
+
+#pragma mark - MBProgressHud
+
+- (void) showProgressHudInView:(UIWindow*)aView withTitle:(NSString*)aTitle andMsg:(NSString*)aMSG
+{
+    MBProgressHUD *aMBProgressHUD = [MBProgressHUD showHUDAddedTo:aView animated:YES];
+    aMBProgressHUD.labelText = aTitle;
+}
+
+- (void) hideProgressHudInView:(UIView*)aView
+{
+    [MBProgressHUD hideHUDForView:aView animated:YES];
 }
 
 

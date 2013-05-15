@@ -59,13 +59,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GamesWrapper/GMViewController.m"
-         timestampString = "389861850.321696"
+         filePath = "GamesWrapper/GMAppDelegate.m"
+         timestampString = "390221400.161192"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
-         landmarkName = "-viewDidLoad"
+         startingLineNumber = "440"
+         endingLineNumber = "440"
+         landmarkName = "-showProgressHudInView:withTitle:andMsg:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

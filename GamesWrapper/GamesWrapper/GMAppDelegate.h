@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "MBProgressHUD.h"
 
 @class GMViewController;
 
@@ -15,7 +16,7 @@
     
      UIImageView *splashImgView;
      NSString *userLocation;
-    
+     UIImageView *optionsPage;
     
 }
 
@@ -28,11 +29,18 @@
 @property (strong , nonatomic)  NSString *userLocation;
 
 
+
+
 -(NSString *) getCurrentLocation : (CLLocation *)location;
 
 -(void) setUpSplash ;
 -(void) setUpRootViewController ;
 -(void) launchSafariFromApp ;
+-(void) onClickTryAgain;
+-(void) onClickLaunchWebSite;
+
+- (void) showProgressHudInView:(UIView*)aView withTitle:(NSString*)aTitle andMsg:(NSString*)aMSG;
+- (void) hideProgressHudInView:(UIView*)aView;
 
 
 @end
