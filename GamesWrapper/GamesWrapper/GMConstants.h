@@ -21,3 +21,8 @@
 #define Flurry_UIWebViewLaunched @"Games pages is launched"
 #define Flurry_SafariLaunched @"Safari is launched"
 #define Flurry_AppClosed @"App closed"
+
+
+
+#define activityViewWidth 100
+#define activityViewHeight 100

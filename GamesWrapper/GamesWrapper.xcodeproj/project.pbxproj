@@ -10,8 +10,6 @@
 		B96413CD1742352500908B3E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CC1742352500908B3E /* Default.png */; };
 		B96413D01742373000908B3E /* btn-launchwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CE1742373000908B3E /* btn-launchwebsite.png */; };
 		B96413D11742373000908B3E /* btn_tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CF1742373000908B3E /* btn_tryagain.png */; };
-		B96413D417424C4A00908B3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B96413D317424C4A00908B3E /* MBProgressHUD.m */; };
-		B96413D517424D7C00908B3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B96413D317424C4A00908B3E /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B9868B07171D11F70021AB7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B06171D11F70021AB7F /* UIKit.framework */; };
 		B9868B09171D11F70021AB7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B08171D11F70021AB7F /* Foundation.framework */; };
 		B9868B0B171D11F70021AB7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B0A171D11F70021AB7F /* CoreGraphics.framework */; };
@@ -191,8 +189,6 @@
 		B96413CC1742352500908B3E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B96413CE1742373000908B3E /* btn-launchwebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-launchwebsite.png"; sourceTree = "<group>"; };
 		B96413CF1742373000908B3E /* btn_tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_tryagain.png; sourceTree = "<group>"; };
-		B96413D217424C4A00908B3E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		B96413D317424C4A00908B3E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B9868B03171D11F70021AB7F /* GamesWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9868B06171D11F70021AB7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9868B08171D11F70021AB7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -499,8 +495,6 @@
 		B9ADDAEF1738FA0B00BD041B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B96413D217424C4A00908B3E /* MBProgressHUD.h */,
-				B96413D317424C4A00908B3E /* MBProgressHUD.m */,
 				B9ADDAF01738FA2800BD041B /* GMConstants.h */,
 			);
 			name = Utilities;
@@ -968,7 +962,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B96413D517424D7C00908B3E /* MBProgressHUD.m in Sources */,
 				B9868B13171D11F70021AB7F /* main.m in Sources */,
 				B9868B17171D11F70021AB7F /* GMAppDelegate.m in Sources */,
 				B9868B20171D11F70021AB7F /* GMViewController.m in Sources */,
@@ -981,7 +974,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9868B3B171D11F80021AB7F /* GamesWrapperTests.m in Sources */,
-				B96413D417424C4A00908B3E /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

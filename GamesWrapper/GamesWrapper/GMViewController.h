@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface GMViewController : UIViewController
+@interface GMViewController : UIViewController{
+    
+     UIActivityIndicatorView *activityIndictr;
+}
     
    
     

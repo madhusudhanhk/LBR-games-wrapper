@@ -9,6 +9,7 @@
 #import "GMViewController.h"
 #import "Reachability.h"
 
+
 @interface GMViewController ()
 
 
@@ -29,7 +30,37 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
   
-  
+    
+    /* add UIActivityIndicatorView to UIView */
+    
+    
+    if(activityIndictr)activityIndictr=nil;
+    
+    
+    
+    
+    
+    activityIndictr = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, activityViewWidth, activityViewHeight)];
+    activityIndictr.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    activityIndictr.color = [UIColor whiteColor];
+    activityIndictr.hidden=NO;
+    [activityIndictr startAnimating];
+    [self.view addSubview:activityIndictr];
+   
+    int PlaceX = (self.view.frame.size.width - activityIndictr.frame.size.width)/2;
+    int PlaceY = self.view.frame.size.height/2 + activityViewHeight;
+    
+    
+    
+    CGRect activityViewFrame = activityIndictr.frame;
+    activityViewFrame.origin.x = PlaceX;
+    activityViewFrame.origin.y = PlaceY;
+    activityIndictr.frame = activityViewFrame;
+    
+    
+    
+    
     
       
     
@@ -92,6 +123,8 @@
     
     /* hide splashImage once Webview is loaded */
     splashImage.hidden=YES;
+    activityIndictr.hidden=YES;
+    
     NSLog(@"url %@",[webView.request.URL absoluteString]);
     
     //NSLog(@"image frame %@", NSStringFromCGRect(splashImage.frame));

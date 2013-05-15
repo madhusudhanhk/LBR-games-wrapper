@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "MBProgressHUD.h"
+
 
 @class GMViewController;
 
@@ -17,6 +17,7 @@
      UIImageView *splashImgView;
      NSString *userLocation;
      UIImageView *optionsPage;
+    UIActivityIndicatorView *activityIndictr;
     
 }
 
@@ -39,8 +40,6 @@
 -(void) onClickTryAgain;
 -(void) onClickLaunchWebSite;
 
-- (void) showProgressHudInView:(UIView*)aView withTitle:(NSString*)aTitle andMsg:(NSString*)aMSG;
-- (void) hideProgressHudInView:(UIView*)aView;
 
 
 @end

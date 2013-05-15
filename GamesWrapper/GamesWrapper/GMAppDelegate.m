@@ -155,6 +155,9 @@
     [launchWeb addTarget:nil action:@selector(onClickLaunchWebSite) forControlEvents:UIControlEventTouchUpInside];
     [iPhoneView addSubview:tryAgainButton];
     [iPhoneView addSubview:launchWeb];
+    
+   
+    
     //[iPhoneView bringSubviewToFront:launchWeb];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window addSubview: iPhoneView];
@@ -167,8 +170,10 @@
 
 - (void)onClickTryAgain{
     
-    [self showProgressHudInView:self.window withTitle:@"Loading..." andMsg:nil];
-
+    
+    
+    
+    
     
     /* if location manager objects is exsists , make it nil  */
     if(self.locationManager)self.locationManager=nil;
@@ -202,6 +207,8 @@
 
 -(void) setUpSplash {
     
+     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     
    
     UIImage *splashImage;
@@ -224,10 +231,34 @@
     splashImgView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     [splashImgView setImage: splashImage];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window addSubview: splashImgView];
     
-        
+    
+    /* add UIActivityIndicatorView on UIWindow */
+    if(activityIndictr)activityIndictr=nil;
+    
+    activityIndictr = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, activityViewWidth, activityViewHeight)];
+    activityIndictr.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    activityIndictr.color = [UIColor whiteColor];
+    activityIndictr.hidden=NO;
+     [activityIndictr startAnimating];
+     
+    
+    int PlaceX = (self.window.frame.size.width - activityIndictr.frame.size.width)/2;
+    int PlaceY = self.window.frame.size.height/2 + activityViewHeight;
+    
+    
+    
+    CGRect activityViewFrame = activityIndictr.frame;
+    activityViewFrame.origin.x = PlaceX;
+    activityViewFrame.origin.y = PlaceY;
+    activityIndictr.frame = activityViewFrame;
+    
+    
+    
+    
+    [self.window addSubview: splashImgView];
+    [self.window  addSubview:activityIndictr];
     [self.window makeKeyAndVisible];
     
     
@@ -429,21 +460,6 @@
 
 void uncaughtExceptionHandler(NSException *exception) {
     [Flurry logError:@"Uncaught" message:@"Crash!" exception:exception];
-}
-
-
-
-#pragma mark - MBProgressHud
-
-- (void) showProgressHudInView:(UIWindow*)aView withTitle:(NSString*)aTitle andMsg:(NSString*)aMSG
-{
-    MBProgressHUD *aMBProgressHUD = [MBProgressHUD showHUDAddedTo:aView animated:YES];
-    aMBProgressHUD.labelText = aTitle;
-}
-
-- (void) hideProgressHudInView:(UIView*)aView
-{
-    [MBProgressHUD hideHUDForView:aView animated:YES];
 }
 
 
