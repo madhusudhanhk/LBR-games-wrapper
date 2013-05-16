@@ -188,7 +188,7 @@
 
 /* Begin PBXFileReference section */
 		B906C1F317439B3A004BE58F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		B96413CC1742352500908B3E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B96413CC1742352500908B3E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
 		B96413CE1742373000908B3E /* btn-launchwebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-launchwebsite.png"; sourceTree = "<group>"; };
 		B96413CF1742373000908B3E /* btn_tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_tryagain.png; sourceTree = "<group>"; };
 		B9868B03171D11F70021AB7F /* GamesWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,7 +406,6 @@
 		B9868AFA171D11F70021AB7F = {
 			isa = PBXGroup;
 			children = (
-				B96413CC1742352500908B3E /* Default.png */,
 				B9868B0C171D11F70021AB7F /* GamesWrapper */,
 				B9868B33171D11F80021AB7F /* GamesWrapperTests */,
 				B9868B05171D11F70021AB7F /* Frameworks */,
@@ -513,6 +512,7 @@
 		B9C1E38E172697CB00A97D25 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B96413CC1742352500908B3E /* Default.png */,
 				B9C47757172A425300456DFE /* Default-Portrait@2x~ipad.png */,
 				B906C1F317439B3A004BE58F /* Default.png */,
 				B96413CE1742373000908B3E /* btn-launchwebsite.png */,

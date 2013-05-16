@@ -9,7 +9,7 @@
 #import "GMViewController.h"
 #import "Reachability.h"
 
-
+#import <FacebookSDK/FacebookSDK.h>
 @interface GMViewController ()
 
 
@@ -31,7 +31,48 @@
 	// Do any additional setup after loading the view, typically from a nib.
   
     
-    /* add UIActivityIndicatorView to UIView */
+   /*
+    *** To test FB SDK working just creating API calls *****
+    
+    // FBSample logic
+    // if the session is open, then load the data for our view controller
+    if (!FBSession.activeSession.isOpen) {
+        // if the session is closed, then we open it here, and establish a handler for state changes
+        [FBSession.activeSession openWithCompletionHandler:^(FBSession *session,
+                                                             FBSessionState state,
+                                                             NSError *error) {
+            switch (state) {
+                case FBSessionStateClosedLoginFailed:
+                {
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                        message:error.localizedDescription
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+                    [alertView show];
+                }case FBSessionStateOpen:{
+                    if (FBSession.activeSession.isOpen) {
+                        [[FBRequest requestForMe] startWithCompletionHandler:
+                         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+                             if (!error) {
+                                 
+                                 
+                             }
+                         }];
+                    }
+                }
+                default:
+                    break;
+            }
+        }];
+    }
+    
+    *** end FB SDK check ***
+    
+    
+   */
+    
+     /* add UIActivityIndicatorView to UIView */
     
     
     if(activityIndictr)activityIndictr=nil;
