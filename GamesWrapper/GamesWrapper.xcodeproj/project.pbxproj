@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B906C1F417439B3A004BE58F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B906C1F317439B3A004BE58F /* Default.png */; };
 		B96413CD1742352500908B3E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CC1742352500908B3E /* Default.png */; };
 		B96413D01742373000908B3E /* btn-launchwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CE1742373000908B3E /* btn-launchwebsite.png */; };
 		B96413D11742373000908B3E /* btn_tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CF1742373000908B3E /* btn_tryagain.png */; };
@@ -186,6 +187,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B906C1F317439B3A004BE58F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B96413CC1742352500908B3E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B96413CE1742373000908B3E /* btn-launchwebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-launchwebsite.png"; sourceTree = "<group>"; };
 		B96413CF1742373000908B3E /* btn_tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_tryagain.png; sourceTree = "<group>"; };
@@ -226,7 +228,6 @@
 		B9C1E391172697CB00A97D25 /* app_icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_ipad.png; sourceTree = "<group>"; };
 		B9C1E392172697CB00A97D25 /* app_icon_ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon_ipad@2x.png"; sourceTree = "<group>"; };
 		B9C1E393172697CB00A97D25 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B9C1E394172697CB00A97D25 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B9C1E395172697CB00A97D25 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B9C1E396172697CB00A97D25 /* splash_768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_768x1024.png; sourceTree = "<group>"; };
 		B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_768x1024@2x.png"; sourceTree = "<group>"; };
@@ -513,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				B9C47757172A425300456DFE /* Default-Portrait@2x~ipad.png */,
+				B906C1F317439B3A004BE58F /* Default.png */,
 				B96413CE1742373000908B3E /* btn-launchwebsite.png */,
 				B96413CF1742373000908B3E /* btn_tryagain.png */,
 				B9C47758172A425300456DFE /* Default-Portrait~ipad.png */,
@@ -521,7 +523,6 @@
 				B9C1E391172697CB00A97D25 /* app_icon_ipad.png */,
 				B9C1E392172697CB00A97D25 /* app_icon_ipad@2x.png */,
 				B9C1E393172697CB00A97D25 /* Default-568h@2x.png */,
-				B9C1E394172697CB00A97D25 /* Default.png */,
 				B9C1E395172697CB00A97D25 /* Default@2x.png */,
 				B9C1E396172697CB00A97D25 /* splash_768x1024.png */,
 				B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */,
@@ -928,6 +929,7 @@
 				B96413CD1742352500908B3E /* Default.png in Resources */,
 				B96413D01742373000908B3E /* btn-launchwebsite.png in Resources */,
 				B96413D11742373000908B3E /* btn_tryagain.png in Resources */,
+				B906C1F417439B3A004BE58F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,8 +1135,8 @@
 					"\"$(SRCROOT)/GamesWrapper/Flurry iPhone SDK viPhone 4.2.1/Flurry-iOS-4.2.1/FlurryAds\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8063F3A5-E26F-4FBC-8566-425468AB43EB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8063F3A5-E26F-4FBC-8566-425468AB43EB";
+				PROVISIONING_PROFILE = "10FA9778-2650-4FD6-AD8E-FA067928047A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10FA9778-2650-4FD6-AD8E-FA067928047A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

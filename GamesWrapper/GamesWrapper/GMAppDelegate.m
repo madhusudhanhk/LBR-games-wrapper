@@ -125,7 +125,7 @@
     }else if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {
         
-        optionsImage =[UIImage imageNamed:@"default.png"];
+        optionsImage =[UIImage imageNamed:@"Default.png"];
         
     }
 #endif
@@ -173,6 +173,49 @@
     
     
     
+    
+    
+    /* add UIActivityIndicatorView on UIWindow */
+    
+    if(activityIndictr)activityIndictr=nil;
+    
+    
+    
+    activityIndictr = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, activityViewWidth, activityViewHeight)];
+    
+    activityIndictr.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    
+    
+    activityIndictr.color = [UIColor whiteColor];
+    
+    activityIndictr.hidden=NO;
+    
+    [activityIndictr startAnimating];
+    
+    
+    
+    
+    
+    int PlaceX = (self.window.frame.size.width - activityIndictr.frame.size.width)/2;
+    
+    int PlaceY = self.window.frame.size.height/2 + activityViewHeight;
+    
+    
+    
+    
+    
+    
+    
+    CGRect activityViewFrame = activityIndictr.frame;
+    
+    activityViewFrame.origin.x = PlaceX;
+    
+    activityViewFrame.origin.y = PlaceY;
+    
+    activityIndictr.frame = activityViewFrame;
+    
+    [self.window  addSubview:activityIndictr];
     
     
     /* if location manager objects is exsists , make it nil  */
