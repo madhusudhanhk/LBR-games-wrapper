@@ -12,7 +12,7 @@
 
 //Constants for Facebook Integration
 
-#define Facebook_APP_ID @"150038098508329" // TODO :: updated new LBR Facebook account app id
+#define Facebook_APP_ID @"390115054437032" // TODO :: updated new LBR Facebook account app id
 #define Flurry_API_KEY @"N68WNFJW2P6RNRHVWP9V" // TODO :: update new LBR Flurry account API KEY
 
 #define Flurry_Applaunched @"Games Wrapper App Launched"

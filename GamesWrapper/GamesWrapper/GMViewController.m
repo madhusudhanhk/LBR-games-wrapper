@@ -32,7 +32,7 @@
   
     
    /*
-    *** To test FB SDK working just creating API calls *****
+   // *** To test FB SDK working just creating API calls *****
     
     // FBSample logic
     // if the session is open, then load the data for our view controller
@@ -67,10 +67,11 @@
         }];
     }
     
-    *** end FB SDK check ***
+   // *** end FB SDK check ***
     
+    */
     
-   */
+   
     
      /* add UIActivityIndicatorView to UIView */
     
