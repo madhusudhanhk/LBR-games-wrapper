@@ -10,6 +10,8 @@
 #import "Reachability.h"
 
 #import <FacebookSDK/FacebookSDK.h>
+#import "Flurry.h"
+
 @interface GMViewController ()
 
 
@@ -27,11 +29,13 @@
 {
     [super viewDidLoad];
     
+    /* start flurry session */
+    [Flurry startSession:Flurry_API_KEY];
     
 	// Do any additional setup after loading the view, typically from a nib.
   
-    
-   /*
+    /*
+   
    // *** To test FB SDK working just creating API calls *****
     
     // FBSample logic
@@ -54,6 +58,8 @@
                     if (FBSession.activeSession.isOpen) {
                         [[FBRequest requestForMe] startWithCompletionHandler:
                          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+                             
+                               NSSet *returnValu = [FBSettings loggingBehavior];
                              if (!error) {
                                  
                                  
@@ -70,6 +76,7 @@
    // *** end FB SDK check ***
     
     */
+    
     
    
     
@@ -167,10 +174,21 @@
     splashImage.hidden=YES;
     activityIndictr.hidden=YES;
     
-    NSLog(@"url %@",[webView.request.URL absoluteString]);
     
-    //NSLog(@"image frame %@", NSStringFromCGRect(splashImage.frame));
-   // NSLog(@"webview frame %@", NSStringFromCGRect(myWebView.frame));
+    /*  Add an event for url loaded in UIWebView  */
+    
+    NSDictionary *dictionary =
+    [NSDictionary dictionaryWithObjectsAndKeys:[webView.request.URL absoluteString],
+     @"URL",
+     nil];
+    
+    [Flurry logEvent:Flurry_URL_loadedInWebView withParameters:dictionary timed:YES];
+    
+    
+    
+    
+   // NSLog(@"url %@",[webView.request.URL absoluteString]);
+   
     
     
 }

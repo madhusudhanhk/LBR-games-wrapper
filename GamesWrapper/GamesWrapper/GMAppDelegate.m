@@ -26,8 +26,34 @@
     
     /* registor for Facebook Ad With Facebook App id */
     
-    [FBSession.activeSession isOpen];
-    [FBSettings publishInstall:Facebook_APP_ID];
+   // [FBSession.activeSession isOpen];
+   // [FBSettings publishInstall:Facebook_APP_ID];
+    
+    [FBSettings publishInstall:Facebook_APP_ID withHandler:^(FBGraphObject *response, NSError *error) {
+      
+        if (!error) {
+            
+            
+            NSLog(@"FB response error %@", [error localizedDescription]);
+            
+            
+        }
+    }];
+    
+    
+    NSLog(@"App id %@",[FBSession defaultAppID]);
+    
+    
+  /*
+   
+    [FBSettings setClientToken:Facebook_APP_ID];
+    [FBSettings setLoggingBehavior:[NSSet setWithObject:FBLoggingBehaviorInsights]];
+      NSSet *returnValu = [FBSettings loggingBehavior];
+    
+    
+    NSString *str =[FBInsights appVersion];
+   
+    */
     
     /* registor for Flurry analytics with Flurry_API_KEY */
     
@@ -419,7 +445,19 @@
     
      [Flurry logEvent:Flurry_SafariLaunched timed:YES];
     
+    
+    
     NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/games"];
+    
+    
+    /*  Add an event for url loaded in safari  */
+    
+    NSDictionary *dictionary =
+    [NSDictionary dictionaryWithObjectsAndKeys:url,
+     @"URL",
+     nil];
+    
+    [Flurry logEvent:Flurry_URL_loadedInSafari withParameters:dictionary timed:YES];
     
     if (![[UIApplication sharedApplication] openURL:url])
         NSLog(@"%@%@",@"Failed to open url:",[url description]);
