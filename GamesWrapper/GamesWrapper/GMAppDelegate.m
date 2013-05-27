@@ -26,7 +26,7 @@
     
     /* registor for Facebook Ad With Facebook App id */
     
-   // [FBSession.activeSession isOpen];
+    [FBSession.activeSession isOpen];
    // [FBSettings publishInstall:Facebook_APP_ID];
     
     [FBSettings publishInstall:Facebook_APP_ID withHandler:^(FBGraphObject *response, NSError *error) {
@@ -40,8 +40,8 @@
         }
     }];
     
-    
-    NSLog(@"App id %@",[FBSession defaultAppID]);
+         
+    //NSLog(@"App id %@",[FBSession defaultAppID]);
     
     
   /*
@@ -284,6 +284,9 @@
 /* Add splash screen on Window */
 
 -(void) setUpSplash {
+    
+    /* Flurry PageView count */
+    [Flurry logPageView];
     
      self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

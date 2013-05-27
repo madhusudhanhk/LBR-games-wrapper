@@ -32,6 +32,10 @@
     /* start flurry session */
     [Flurry startSession:Flurry_API_KEY];
     
+    /* Flurry PageView count */
+    [Flurry logPageView];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
   
     /*
@@ -109,9 +113,8 @@
     
     
     
+ 
     
-    
-      
     
     /* check for internet connection */
     
