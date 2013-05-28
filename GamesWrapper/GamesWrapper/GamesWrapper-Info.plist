@@ -16,6 +16,10 @@
 			<array>
 				<string>icon.png</string>
 				<string>icon@2x.png</string>
+				<string>iTunesArtwork</string>
+				<string>Icon-Small-50</string>
+				<string>Icon-Smal@2x</string>
+				<string>Icon-Smal</string>
 			</array>
 		</dict>
 	</dict>

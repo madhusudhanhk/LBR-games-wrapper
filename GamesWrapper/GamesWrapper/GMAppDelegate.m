@@ -41,20 +41,7 @@
     }];
     
          
-    //NSLog(@"App id %@",[FBSession defaultAppID]);
-    
-    
-  /*
-   
-    [FBSettings setClientToken:Facebook_APP_ID];
-    [FBSettings setLoggingBehavior:[NSSet setWithObject:FBLoggingBehaviorInsights]];
-      NSSet *returnValu = [FBSettings loggingBehavior];
-    
-    
-    NSString *str =[FBInsights appVersion];
-   
-    */
-    
+       
     /* registor for Flurry analytics with Flurry_API_KEY */
     
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
@@ -154,13 +141,13 @@
     UIDevice* thisDevice = [UIDevice currentDevice];
     if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
     {
-        optionsImage =[UIImage imageNamed:@"splash_768x1024"];
+        optionsImage =[UIImage imageNamed:@"Option_splash_768x1024"];
         
         
     }else if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {
         
-        optionsImage =[UIImage imageNamed:@"Default.png"];
+        optionsImage =[UIImage imageNamed:@"Option_Default.png"];
         
     }
 #endif
@@ -180,13 +167,56 @@
         buttonSpace = 40;
     }
     
-    CGRect frame = CGRectMake(buttonSpace/2, screenHeight-((screenHeight/10)*3.5), screenWidth-buttonSpace, screenHeight/10);
+    
+    
+    
+    UIImage *tryAgainImage =[UIImage imageNamed:@"btn_tryagain"];
+    UIImage *launchSafariImage =[UIImage imageNamed:@"btn-launchwebsite"];
+    
+    
+    int PlaceX = (screenWidth - tryAgainImage.size.width)/2 + 15;
+    int PlaceY ;
+    int PlaceY1 ;
+    
+    CGRect frame;
+    CGRect frame1;
+    
+    
+    
+    UIDevice* myDevice = [UIDevice currentDevice];
+    if(myDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
+    {
+     
+        PlaceY = self.window.frame.size.height - 200;
+        PlaceY1 = self.window.frame.size.height -100;
+        
+        
+         frame = CGRectMake(PlaceX,PlaceY, tryAgainImage.size.width, tryAgainImage.size.height);
+        
+         frame1 = CGRectMake(PlaceX, PlaceY1, launchSafariImage.size.width, launchSafariImage.size.height);
+        
+        
+    }else if(myDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+    {
+        
+         PlaceY = self.window.frame.size.height - 120;
+         PlaceY1 = self.window.frame.size.height -65;
+        
+         frame = CGRectMake(PlaceX,PlaceY, screenWidth-buttonSpace, screenHeight/10);
+        
+         frame1 = CGRectMake(PlaceX, PlaceY1, screenWidth-buttonSpace, screenHeight/10);
+        
+        
+    }
+    
+    
+    
     UIButton *tryAgainButton = [[UIButton alloc] initWithFrame:frame];
-    [tryAgainButton setBackgroundImage:[UIImage imageNamed:@"btn_tryagain"] forState:UIControlStateNormal];
+    [tryAgainButton setBackgroundImage:tryAgainImage forState:UIControlStateNormal];
     [tryAgainButton addTarget:nil action:@selector(onClickTryAgain) forControlEvents:UIControlEventTouchUpInside];
-    CGRect frame1 = CGRectMake(buttonSpace/2, frame.origin.y+useValue, screenWidth-buttonSpace, screenHeight/10);
+   
     UIButton *launchWeb = [[UIButton alloc] initWithFrame:frame1];
-    [launchWeb setBackgroundImage:[UIImage imageNamed:@"btn-launchwebsite"] forState:UIControlStateNormal];
+    [launchWeb setBackgroundImage:launchSafariImage forState:UIControlStateNormal];
     [launchWeb addTarget:nil action:@selector(onClickLaunchWebSite) forControlEvents:UIControlEventTouchUpInside];
     [iPhoneView addSubview:tryAgainButton];
     [iPhoneView addSubview:launchWeb];
