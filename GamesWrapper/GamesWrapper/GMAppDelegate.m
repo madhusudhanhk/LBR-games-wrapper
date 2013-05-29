@@ -195,16 +195,43 @@
         
          frame1 = CGRectMake(PlaceX, PlaceY1, launchSafariImage.size.width, launchSafariImage.size.height);
         
+        NSLog(@"frame : %@ , frame1: %@", NSStringFromCGRect(frame), NSStringFromCGRect(frame1));
+        
         
     }else if(myDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {
+
         
-         PlaceY = self.window.frame.size.height - 120;
-         PlaceY1 = self.window.frame.size.height -65;
+        CGSize result = [[UIScreen mainScreen] bounds].size;
+        if(result.height == 480)
+        {
+            // iPhone Classic
+            
+            PlaceY = self.window.frame.size.height - 120;
+            PlaceY1 = self.window.frame.size.height -65;
+            
+            frame = CGRectMake(PlaceX,PlaceY, screenWidth-buttonSpace, screenHeight/10);
+            
+            frame1 = CGRectMake(PlaceX, PlaceY1, screenWidth-buttonSpace, screenHeight/10);
+            
+            NSLog(@"iPhone classic , frame : %@ , frame1: %@", NSStringFromCGRect(frame), NSStringFromCGRect(frame1));
+        }
+        else if(result.height == 568)
+        {
+            // iPhone 5
+            
+            PlaceY = self.window.frame.size.height - 140
+            ;
+            PlaceY1 = self.window.frame.size.height -72;
+            
+            frame = CGRectMake(PlaceX,PlaceY, screenWidth-buttonSpace, screenHeight/10);
+            
+            frame1 = CGRectMake(PlaceX, PlaceY1, screenWidth-buttonSpace, screenHeight/10);
+            
+            NSLog(@"iPhone 5 , frame : %@ , frame1: %@", NSStringFromCGRect(frame), NSStringFromCGRect(frame1));
+        }
         
-         frame = CGRectMake(PlaceX,PlaceY, screenWidth-buttonSpace, screenHeight/10);
         
-         frame1 = CGRectMake(PlaceX, PlaceY1, screenWidth-buttonSpace, screenHeight/10);
         
         
     }

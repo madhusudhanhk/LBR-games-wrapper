@@ -160,6 +160,18 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;{
     
+    
+     NSLog(@"url %@",[webView.request.URL absoluteString]);
+    
+    NSString *str =[request.URL absoluteString];
+    
+      NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/games"];
+    if([str isEqualToString:@"http://www.twitter.com/Ladbrokes"]){
+        [webView stopLoading];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+    
+    
     return YES;
     
 }
