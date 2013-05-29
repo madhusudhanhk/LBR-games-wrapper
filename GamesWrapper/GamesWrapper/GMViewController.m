@@ -159,7 +159,7 @@
 #pragma mark UIWebView delegate 
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;{
-    
+    /*
     
      NSLog(@"url %@",[webView.request.URL absoluteString]);
     
@@ -171,6 +171,7 @@
         [[UIApplication sharedApplication] openURL:url];
     }
     
+    */
     
     return YES;
     
