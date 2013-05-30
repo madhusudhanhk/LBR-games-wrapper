@@ -13,8 +13,10 @@
 
 //Constants for Facebook Integration
 
-#define Facebook_APP_ID @"390115054437032" // LBR test account ladbrokesgames@gmail.com , Password : Aditi01*
-#define Flurry_API_KEY @"42K2CPT8VNJ62PRDZ3D5" //account  madhusudhanhkmail@gmail.com 
+#define Facebook_APP_ID @"279084948895628" // Ladbrokes Client Account app key
+//#define Facebook_APP_ID @"390115054437032" // LBR test account ladbrokesgames@gmail.com , Password : Aditi01*
+#define Flurry_API_KEY @"N68WNFJW2P6RNRHVWP9V" //account  Ladbrokes Client account 
+//#define Flurry_API_KEY @"42K2CPT8VNJ62PRDZ3D5" //account  madhusudhanhkmail@gmail.com
 
 
 #define Flurry_Applaunched @"Games Wrapper App Launched"

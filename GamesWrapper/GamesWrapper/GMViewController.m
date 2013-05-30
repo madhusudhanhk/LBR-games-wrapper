@@ -167,17 +167,28 @@
 -(BOOL )checkForRestrictedUrls:(NSString *)urlSrting{
     
     
-   
-    int count = [restrictedUrlsArray count];
     
+  
     
-    if([urlSrting isEqualToString:@"http://www.twitter.com/Ladbrokes"]){
-       
-        NSURL *url =[NSURL URLWithString:urlSrting];
+    for(int urlCount = 0 ; urlCount < [restrictedUrlsArray count] ; urlCount ++){
         
-        [[UIApplication sharedApplication] openURL:url];
-        return NO;
+        
+        
+        NSString *string = [restrictedUrlsArray objectAtIndex:urlCount];
+        
+        if ([string rangeOfString:urlSrting options:NSRegularExpressionSearch].location != NSNotFound){
+            
+            NSLog(@"Got it");
+            
+          //  NSURL *url =[NSURL URLWithString:urlSrting];
+            
+           // [[UIApplication sharedApplication] openURL:url];
+            return NO;
+        }
+        
+       
     }
+    
     
     return YES;
     
@@ -199,13 +210,14 @@
     }
     
     */
-    
+    /*
      NSString *str =[request.URL absoluteString];
     
     BOOL resultValue =[self checkForRestrictedUrls:str];
     
+    */
     
-    return resultValue;
+    return YES;
     
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView{

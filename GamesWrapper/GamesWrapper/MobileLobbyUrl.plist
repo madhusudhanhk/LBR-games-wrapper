@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
+	<string>http://www.ladbrokesplc.com/</string>
+	<string>http://news.ladbrokes.com/en-gb/</string>
+	<string>http://www.ladbrokescareers.com/</string>
+	<string>http://www.ladbrokesplc.com/investor-centre.asp</string>
+	<string>http://www.score-affiliates.com/</string>
+	<string>https://sb.ladbrokes.com/Ladbrokes/mobwebapp/entryPoint.html?deepLinkCommandName=mainMenu&amp;locale=en_GB#0</string>
+	<string>http://mobile.ladbrokes.com/lobby/bingo</string>
+	<string>http://mobile.ladbrokes.com/lobby/casino</string>
+	<string>http://mobile.ladbrokes.com/lobby/poker</string>
+	<string>http://help.ladbrokes.com/display/4/search.aspx?tab=search&amp;c=&amp;cpc=&amp;cid=&amp;r=</string>
+	<string>http://help.ladbrokes.com/display/4/kb/article.aspx?aid=1077</string>
+	<string>http://help.ladbrokes.com/display/4/kb/article.aspx?aid=2665</string>
+	<string>http://help.ladbrokes.com/display/4/kb/article.aspx?aid=1120</string>
+	<string>http://help.ladbrokes.com/display/4/kb/article.aspx?aid=1120#r5</string>
+	<string>http://help.ladbrokes.com/display/4/kb/optional/index.aspx?tab=opt4&amp;opt=4</string>
+	<string>http://www.gambleaware.co.uk/</string>
+	<string>http://media.ladbrokes.com/generic/images/siteImages/footerIcons_various/18.gif</string>
 	<string>http://www.twitter.com/Ladbrokes</string>
 </array>
 </plist>
