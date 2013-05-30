@@ -24,6 +24,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    
+  
+    
+ 
+    
+    
+    
+    
     /* registor for Facebook Ad With Facebook App id */
     
     [FBSession.activeSession isOpen];

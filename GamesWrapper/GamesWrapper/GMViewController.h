@@ -12,6 +12,8 @@
 @interface GMViewController : UIViewController{
     
      UIActivityIndicatorView *activityIndictr;
+     NSArray *restrictedUrlsArray;
+    
 }
     
    

@@ -137,6 +137,7 @@
 		B906C2FF174B5746004BE58F /* Jansson-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B906C27E174B5745004BE58F /* Jansson-LICENSE.txt */; };
 		B906C300174B5746004BE58F /* ProjectApiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = B906C27F174B5745004BE58F /* ProjectApiKey.txt */; };
 		B906C302174B57E4004BE58F /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B906C301174B57E4004BE58F /* FacebookSDKResources.bundle */; };
+		B95D0ABE17571F2900F07876 /* MobileLobbyUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = B95D0ABD17571F2900F07876 /* MobileLobbyUrl.plist */; };
 		B96413D01742373000908B3E /* btn-launchwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CE1742373000908B3E /* btn-launchwebsite.png */; };
 		B96413D11742373000908B3E /* btn_tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CF1742373000908B3E /* btn_tryagain.png */; };
 		B9868B07171D11F70021AB7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9868B06171D11F70021AB7F /* UIKit.framework */; };
@@ -329,6 +330,7 @@
 		B906C27F174B5745004BE58F /* ProjectApiKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectApiKey.txt; sourceTree = "<group>"; };
 		B906C280174B5745004BE58F /* GMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMConstants.h; sourceTree = "<group>"; };
 		B906C301174B57E4004BE58F /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = GamesWrapper/Utilities/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		B95D0ABD17571F2900F07876 /* MobileLobbyUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MobileLobbyUrl.plist; sourceTree = "<group>"; };
 		B96413CE1742373000908B3E /* btn-launchwebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-launchwebsite.png"; sourceTree = "<group>"; };
 		B96413CF1742373000908B3E /* btn_tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_tryagain.png; sourceTree = "<group>"; };
 		B9868B03171D11F70021AB7F /* GamesWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -675,6 +677,7 @@
 				B9C1E38E172697CB00A97D25 /* Images */,
 				B9868B0E171D11F70021AB7F /* GamesWrapper-Info.plist */,
 				B99989F0171D58810014E04F /* UrlFile.plist */,
+				B95D0ABD17571F2900F07876 /* MobileLobbyUrl.plist */,
 				B9868B0F171D11F70021AB7F /* InfoPlist.strings */,
 				B9868B12171D11F70021AB7F /* main.m */,
 				B9868B14171D11F70021AB7F /* GamesWrapper-Prefix.pch */,
@@ -962,6 +965,7 @@
 				B9A665DF1754BE1300323991 /* Icon-Smal@2x.png in Resources */,
 				B9A665E01754BE1300323991 /* Icon-Smal.png in Resources */,
 				B9A665E11754BE1300323991 /* iTunesArtwork in Resources */,
+				B95D0ABE17571F2900F07876 /* MobileLobbyUrl.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

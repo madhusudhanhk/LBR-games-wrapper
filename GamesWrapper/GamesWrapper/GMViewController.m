@@ -13,8 +13,7 @@
 #import "Flurry.h"
 
 @interface GMViewController ()
-
-
+-(BOOL)checkForRestrictedUrls:(NSString *)urlSrting;
 
 
 @end
@@ -34,6 +33,14 @@
     
     /* Flurry PageView count */
     [Flurry logPageView];
+    
+    
+    /* alloc restricted urls into a array from plist */
+    
+    if(restrictedUrlsArray)restrictedUrlsArray=nil;
+    
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"MobileLobbyUrl" ofType:@"plist"];
+    restrictedUrlsArray = [[NSArray alloc]initWithContentsOfFile:plistPath];
     
     
 	// Do any additional setup after loading the view, typically from a nib.
@@ -156,6 +163,26 @@
     
     
 }
+
+-(BOOL )checkForRestrictedUrls:(NSString *)urlSrting{
+    
+    
+   
+    int count = [restrictedUrlsArray count];
+    
+    
+    if([urlSrting isEqualToString:@"http://www.twitter.com/Ladbrokes"]){
+       
+        NSURL *url =[NSURL URLWithString:urlSrting];
+        
+        [[UIApplication sharedApplication] openURL:url];
+        return NO;
+    }
+    
+    return YES;
+    
+    
+}
 #pragma mark UIWebView delegate 
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;{
@@ -163,7 +190,7 @@
     
      NSLog(@"url %@",[webView.request.URL absoluteString]);
     
-    NSString *str =[request.URL absoluteString];
+   
     
       NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/games"];
     if([str isEqualToString:@"http://www.twitter.com/Ladbrokes"]){
@@ -173,7 +200,12 @@
     
     */
     
-    return YES;
+     NSString *str =[request.URL absoluteString];
+    
+    BOOL resultValue =[self checkForRestrictedUrls:str];
+    
+    
+    return resultValue;
     
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView{
