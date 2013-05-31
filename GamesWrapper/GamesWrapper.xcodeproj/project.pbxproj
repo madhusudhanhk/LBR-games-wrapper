@@ -137,6 +137,9 @@
 		B906C2FF174B5746004BE58F /* Jansson-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B906C27E174B5745004BE58F /* Jansson-LICENSE.txt */; };
 		B906C300174B5746004BE58F /* ProjectApiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = B906C27F174B5745004BE58F /* ProjectApiKey.txt */; };
 		B906C302174B57E4004BE58F /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B906C301174B57E4004BE58F /* FacebookSDKResources.bundle */; };
+		B93C073117585DF400203536 /* GMPopOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C072F17585DF400203536 /* GMPopOverViewController.m */; };
+		B93C073217585DF400203536 /* GMPopOverViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93C073017585DF400203536 /* GMPopOverViewController_iPhone.xib */; };
+		B93C073417585E3F00203536 /* GMPopOverViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93C073317585E3F00203536 /* GMPopOverViewController_iPad.xib */; };
 		B95D0ABE17571F2900F07876 /* MobileLobbyUrl.plist in Resources */ = {isa = PBXBuildFile; fileRef = B95D0ABD17571F2900F07876 /* MobileLobbyUrl.plist */; };
 		B96413D01742373000908B3E /* btn-launchwebsite.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CE1742373000908B3E /* btn-launchwebsite.png */; };
 		B96413D11742373000908B3E /* btn_tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = B96413CF1742373000908B3E /* btn_tryagain.png */; };
@@ -330,6 +333,10 @@
 		B906C27F174B5745004BE58F /* ProjectApiKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectApiKey.txt; sourceTree = "<group>"; };
 		B906C280174B5745004BE58F /* GMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMConstants.h; sourceTree = "<group>"; };
 		B906C301174B57E4004BE58F /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = GamesWrapper/Utilities/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		B93C072E17585DF400203536 /* GMPopOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMPopOverViewController.h; sourceTree = "<group>"; };
+		B93C072F17585DF400203536 /* GMPopOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMPopOverViewController.m; sourceTree = "<group>"; };
+		B93C073017585DF400203536 /* GMPopOverViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMPopOverViewController_iPhone.xib; sourceTree = "<group>"; };
+		B93C073317585E3F00203536 /* GMPopOverViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMPopOverViewController_iPad.xib; sourceTree = "<group>"; };
 		B95D0ABD17571F2900F07876 /* MobileLobbyUrl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MobileLobbyUrl.plist; sourceTree = "<group>"; };
 		B96413CE1742373000908B3E /* btn-launchwebsite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-launchwebsite.png"; sourceTree = "<group>"; };
 		B96413CF1742373000908B3E /* btn_tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_tryagain.png; sourceTree = "<group>"; };
@@ -664,6 +671,10 @@
 				B9868B16171D11F70021AB7F /* GMAppDelegate.m */,
 				B9868B1E171D11F70021AB7F /* GMViewController.h */,
 				B9868B1F171D11F70021AB7F /* GMViewController.m */,
+				B93C072E17585DF400203536 /* GMPopOverViewController.h */,
+				B93C072F17585DF400203536 /* GMPopOverViewController.m */,
+				B93C073317585E3F00203536 /* GMPopOverViewController_iPad.xib */,
+				B93C073017585DF400203536 /* GMPopOverViewController_iPhone.xib */,
 				B9868B21171D11F70021AB7F /* GMViewController_iPhone.xib */,
 				B9868B24171D11F70021AB7F /* GMViewController_iPad.xib */,
 				B9868B0D171D11F70021AB7F /* Supporting Files */,
@@ -966,6 +977,8 @@
 				B9A665E01754BE1300323991 /* Icon-Smal.png in Resources */,
 				B9A665E11754BE1300323991 /* iTunesArtwork in Resources */,
 				B95D0ABE17571F2900F07876 /* MobileLobbyUrl.plist in Resources */,
+				B93C073217585DF400203536 /* GMPopOverViewController_iPhone.xib in Resources */,
+				B93C073417585E3F00203536 /* GMPopOverViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1017,7 @@
 				B9868B17171D11F70021AB7F /* GMAppDelegate.m in Sources */,
 				B9868B20171D11F70021AB7F /* GMViewController.m in Sources */,
 				B9C1E364172520F300A97D25 /* Reachability.m in Sources */,
+				B93C073117585DF400203536 /* GMPopOverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

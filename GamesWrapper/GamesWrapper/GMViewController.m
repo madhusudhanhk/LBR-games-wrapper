@@ -12,8 +12,13 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Flurry.h"
 
+
+
 @interface GMViewController ()
 -(BOOL)checkForRestrictedUrls:(NSString *)urlSrting;
+-(void)launchPopOverViewController:(NSString *)urlString;
+
+
 
 
 @end
@@ -27,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+   
     
     /* start flurry session */
     [Flurry startSession:Flurry_API_KEY];
@@ -141,6 +148,14 @@
         
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    /* hide splashImage once Webview is loaded */
+    splashImage.hidden=YES;
+    activityIndictr.hidden=YES;
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -174,24 +189,52 @@
         
         
         
-        NSString *string = [restrictedUrlsArray objectAtIndex:urlCount];
+        NSString *restrictedString = [restrictedUrlsArray objectAtIndex:urlCount];
         
-        if ([string rangeOfString:urlSrting options:NSRegularExpressionSearch].location != NSNotFound){
+        
+       
+        
+        if ([urlSrting rangeOfString:restrictedString options:NSRegularExpressionSearch].location != NSNotFound){
             
-            NSLog(@"Got it");
+           [self launchPopOverViewController:urlSrting];
             
-          //  NSURL *url =[NSURL URLWithString:urlSrting];
             
-           // [[UIApplication sharedApplication] openURL:url];
+          
             return NO;
         }
         
        
     }
-    
+   
+   
     
     return YES;
     
+    
+}
+
+-(void)launchPopOverViewController:(NSString *)urlString{
+    
+    
+    if(popOverViewControoler)popOverViewControoler=nil;
+    
+
+    
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        
+        popOverViewControoler = [[GMPopOverViewController alloc] initWithNibName:@"GMPopOverViewController_iPhone" bundle:nil];
+        popOverViewControoler.urlLink=urlString;
+        
+        
+    } else {
+        
+        popOverViewControoler = [[GMPopOverViewController alloc] initWithNibName:@"GMPopOverViewController_iPad" bundle:nil];
+        popOverViewControoler.urlLink=urlString;
+    }
+    
+    
+     [self presentViewController:popOverViewControoler animated:YES completion:nil];
     
 }
 #pragma mark UIWebView delegate 
@@ -210,14 +253,14 @@
     }
     
     */
-    /*
+    
      NSString *str =[request.URL absoluteString];
     
     BOOL resultValue =[self checkForRestrictedUrls:str];
     
-    */
     
-    return YES;
+    
+    return resultValue;
     
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView{
@@ -232,7 +275,12 @@
     
     /* hide splashImage once Webview is loaded */
     splashImage.hidden=YES;
+    [activityIndictr stopAnimating];
     activityIndictr.hidden=YES;
+    
+    
+   
+    
     
     
     /*  Add an event for url loaded in UIWebView  */

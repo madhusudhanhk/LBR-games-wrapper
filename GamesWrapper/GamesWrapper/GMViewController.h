@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GMPopOverViewController.h"
 
 @interface GMViewController : UIViewController{
     
      UIActivityIndicatorView *activityIndictr;
      NSArray *restrictedUrlsArray;
+    GMPopOverViewController *popOverViewControoler;
+    
     
 }
     
