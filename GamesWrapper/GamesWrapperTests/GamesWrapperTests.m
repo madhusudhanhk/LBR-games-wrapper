@@ -48,6 +48,7 @@
     
    
    /* TO DO : for testing US latt : 37.33233141 , long : -122.0312186 */
+     /* TO DO : for testing IE latt : 53.2734 , long : -7.77832031 */
     CLLocation *location = [[CLLocation alloc]initWithLatitude:51.5 longitude:-0.116666666666667];
     
    

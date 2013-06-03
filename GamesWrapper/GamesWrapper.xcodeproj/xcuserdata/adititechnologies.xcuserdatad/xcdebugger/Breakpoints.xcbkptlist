@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GamesWrapperTests/GamesWrapperTests.m"
-         timestampString = "388997111.752996"
+         timestampString = "391954852.215122"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "64"
-         endingLineNumber = "64"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
          landmarkName = "-testWebView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -105,6 +105,19 @@
          startingLineNumber = "36"
          endingLineNumber = "36"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "GamesWrapper/GMAppDelegate.m"
+         timestampString = "391952885.041094"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "462"
+         endingLineNumber = "462"
+         landmarkName = "-getCurrentLocation:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

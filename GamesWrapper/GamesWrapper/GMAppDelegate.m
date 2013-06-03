@@ -574,7 +574,7 @@
                  if Yes set rootViewController and launch WebView ,
                  else redirect to safari */
                 
-                if([currentLocation isEqualToString:@"United Kingdom"]){
+                if([currentLocation isEqualToString:@"United Kingdom"] || [currentLocation isEqualToString:@"Ireland"]){
                     
                     
                     [self setUpRootViewController];
