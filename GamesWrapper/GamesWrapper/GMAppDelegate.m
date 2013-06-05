@@ -23,14 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    
-  
-    
- 
-    
-    
-    
+        
     
     /* registor for Facebook Ad With Facebook App id */
     
@@ -149,13 +142,13 @@
     UIDevice* thisDevice = [UIDevice currentDevice];
     if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad)
     {
-        optionsImage =[UIImage imageNamed:@"Option_splash_768x1024"];
+        optionsImage =[UIImage imageNamed:@"OptionSplash_768x1024"];
         
         
     }else if(thisDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {
         
-        optionsImage =[UIImage imageNamed:@"Option_Default.png"];
+        optionsImage =[UIImage imageNamed:@"OptionDefault"];
         
     }
 #endif
@@ -459,12 +452,13 @@
              
              CLPlacemark *placemark = [placemarks objectAtIndex:0];
              
-             
+             /*
              NSLog(@"isoCountryCode %@", placemark.ISOcountryCode);
              NSLog(@"country : %@",placemark.country);
              NSLog(@"locality : %@",placemark.locality);
              NSLog(@"sublocality : %@",placemark.subLocality);
              //  NSLog(@"region : %@", placemark.region);
+             */
              
              
              
@@ -475,7 +469,7 @@
                           
          }else{
              
-             NSLog(@"failed getting city: %@", [error description]);
+            // NSLog(@"failed getting city: %@", [error description]);
              
              
              UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Can't find current location" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];

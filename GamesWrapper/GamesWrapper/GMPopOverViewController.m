@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    myNavigationBar.tintColor=UIColorFromRGB(0xf20025);
+    myNavigationBar.tintColor=UIColorFromRGB(0xe50102);
     
     NSString *urlAddress = urlLink;
     

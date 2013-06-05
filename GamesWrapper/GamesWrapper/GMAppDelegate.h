@@ -17,7 +17,7 @@
      UIImageView *splashImgView;
      NSString *userLocation;
      UIImageView *optionsPage;
-    UIActivityIndicatorView *activityIndictr;
+     UIActivityIndicatorView *activityIndictr;
     
 }
 

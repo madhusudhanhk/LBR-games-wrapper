@@ -144,6 +144,7 @@
     
         UIAlertView *alt = [[UIAlertView alloc]initWithTitle:nil message:@"You need to be connected to the internet to proceed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alt    show];
+        
     }
         
 }
@@ -240,19 +241,7 @@
 #pragma mark UIWebView delegate 
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;{
-    /*
     
-     NSLog(@"url %@",[webView.request.URL absoluteString]);
-    
-   
-    
-      NSURL *url = [NSURL URLWithString:@"http://mobile.ladbrokes.com/games"];
-    if([str isEqualToString:@"http://www.twitter.com/Ladbrokes"]){
-        [webView stopLoading];
-        [[UIApplication sharedApplication] openURL:url];
-    }
-    
-    */
     
      NSString *str =[request.URL absoluteString];
     
@@ -266,11 +255,11 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     
     
-    NSLog(@"start load");
+   // NSLog(@"start load");
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
-    NSLog(@"finish load");
+   // NSLog(@"finish load");
     
     
     /* hide splashImage once Webview is loaded */
