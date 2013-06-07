@@ -165,6 +165,7 @@
 
 -(NSString *)loadWebViewWithUrl:(NSString *)newUrl{
     
+    
     NSString *urlAddress = newUrl;
     
     //Create a URL object.

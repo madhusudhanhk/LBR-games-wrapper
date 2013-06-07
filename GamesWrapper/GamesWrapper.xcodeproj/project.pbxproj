@@ -1091,8 +1091,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Aditi Technologies";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aditi Technologies";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1108,8 +1108,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lsqlite3.0";
-				PROVISIONING_PROFILE = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8CF4DFC6-2DB7-45EC-BCCF-DBDF698B41C2";
+				PROVISIONING_PROFILE = "8EEB0646-D29A-4D49-AA89-ED2F090B3AC5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EEB0646-D29A-4D49-AA89-ED2F090B3AC5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1137,8 +1137,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lsqlite3.0";
-				PROVISIONING_PROFILE = "8063F3A5-E26F-4FBC-8566-425468AB43EB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8063F3A5-E26F-4FBC-8566-425468AB43EB";
+				PROVISIONING_PROFILE = "8EEB0646-D29A-4D49-AA89-ED2F090B3AC5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8EEB0646-D29A-4D49-AA89-ED2F090B3AC5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1148,8 +1148,8 @@
 		B9868B3F171D11F80021AB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Aditi Technologies";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bharat Ahluwalia (Z5QQKGB5TP)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1167,8 +1167,8 @@
 					"\"$(SRCROOT)/GamesWrapper/Utilities/Flurry iPhone SDK viPhone 4.2.1/Flurry-iOS-4.2.1/FlurryAds\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "10FA9778-2650-4FD6-AD8E-FA067928047A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "75A8FDAF-E04D-4BB3-9586-2E23A0A6A550";
+				PROVISIONING_PROFILE = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1176,8 +1176,8 @@
 		B9868B40171D11F80021AB7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Aditi Technologies";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aditi Technologies";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1195,8 +1195,8 @@
 					"\"$(SRCROOT)/GamesWrapper/Utilities/Flurry iPhone SDK viPhone 4.2.1/Flurry-iOS-4.2.1/FlurryAds\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "46DF58F1-010F-4EC8-AEED-75A4AF15104C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "46DF58F1-010F-4EC8-AEED-75A4AF15104C";
+				PROVISIONING_PROFILE = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
