@@ -104,9 +104,7 @@
           [self locationServicesIsEnabled];
     }
     */
-    
-  
-    
+   
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
