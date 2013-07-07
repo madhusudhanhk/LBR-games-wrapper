@@ -188,6 +188,9 @@
 		B9C475EC1727BFBC00456DFE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C475EA1727BFBC00456DFE /* icon.png */; };
 		B9C475ED1727BFBC00456DFE /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C475EB1727BFBC00456DFE /* icon@2x.png */; };
 		B9C47759172A425300456DFE /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C47757172A425300456DFE /* Default-Portrait@2x~ipad.png */; };
+		B9FD5CE617891FA000EC2B3A /* TweetComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FD5CE417891FA000EC2B3A /* TweetComposeViewController.m */; };
+		B9FD5CE717891FA000EC2B3A /* TweetComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9FD5CE517891FA000EC2B3A /* TweetComposeViewController.xib */; };
+		B9FD5CEA1789247B00EC2B3A /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FD5CE81789245000EC2B3A /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -394,6 +397,10 @@
 		B9C475EB1727BFBC00456DFE /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		B9C47757172A425300456DFE /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		B9C47758172A425300456DFE /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		B9FD5CE317891FA000EC2B3A /* TweetComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetComposeViewController.h; sourceTree = "<group>"; };
+		B9FD5CE417891FA000EC2B3A /* TweetComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetComposeViewController.m; sourceTree = "<group>"; };
+		B9FD5CE517891FA000EC2B3A /* TweetComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetComposeViewController.xib; sourceTree = "<group>"; };
+		B9FD5CE81789245000EC2B3A /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +408,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FD5CEA1789247B00EC2B3A /* Twitter.framework in Frameworks */,
 				B9C1E38D1726969E00A97D25 /* Accounts.framework in Frameworks */,
 				B9C1E38B172695FF00A97D25 /* Security.framework in Frameworks */,
 				B9C1E387172695AD00A97D25 /* libsqlite3.dylib in Frameworks */,
@@ -650,6 +658,7 @@
 		B9868B05171D11F70021AB7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9FD5CE81789245000EC2B3A /* Twitter.framework */,
 				B906C301174B57E4004BE58F /* FacebookSDKResources.bundle */,
 				B906C1F6174B5745004BE58F /* FacebookSDK.framework */,
 				B9C1E386172695AD00A97D25 /* libsqlite3.dylib */,
@@ -671,18 +680,19 @@
 		B9868B0C171D11F70021AB7F /* GamesWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				B9FD5CE217891F8900EC2B3A /* Social Media */,
 				B906C1F5174B5745004BE58F /* Utilities */,
 				B9C1E361172520F300A97D25 /* InternetConnectivity */,
 				B9868B15171D11F70021AB7F /* GMAppDelegate.h */,
 				B9868B16171D11F70021AB7F /* GMAppDelegate.m */,
 				B9868B1E171D11F70021AB7F /* GMViewController.h */,
 				B9868B1F171D11F70021AB7F /* GMViewController.m */,
+				B9868B21171D11F70021AB7F /* GMViewController_iPhone.xib */,
+				B9868B24171D11F70021AB7F /* GMViewController_iPad.xib */,
 				B93C072E17585DF400203536 /* GMPopOverViewController.h */,
 				B93C072F17585DF400203536 /* GMPopOverViewController.m */,
 				B93C073317585E3F00203536 /* GMPopOverViewController_iPad.xib */,
 				B93C073017585DF400203536 /* GMPopOverViewController_iPhone.xib */,
-				B9868B21171D11F70021AB7F /* GMViewController_iPhone.xib */,
-				B9868B24171D11F70021AB7F /* GMViewController_iPad.xib */,
 				B9868B0D171D11F70021AB7F /* Supporting Files */,
 			);
 			path = GamesWrapper;
@@ -757,6 +767,16 @@
 				B9C1E397172697CB00A97D25 /* splash_768x1024@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		B9FD5CE217891F8900EC2B3A /* Social Media */ = {
+			isa = PBXGroup;
+			children = (
+				B9FD5CE317891FA000EC2B3A /* TweetComposeViewController.h */,
+				B9FD5CE417891FA000EC2B3A /* TweetComposeViewController.m */,
+				B9FD5CE517891FA000EC2B3A /* TweetComposeViewController.xib */,
+			);
+			path = "Social Media";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -995,6 +1015,7 @@
 			files = (
 				B9868B38171D11F80021AB7F /* InfoPlist.strings in Resources */,
 				B9A50CDB1762301C00B79222 /* iTunesArtwork in Resources */,
+				B9FD5CE717891FA000EC2B3A /* TweetComposeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1055,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9868B3B171D11F80021AB7F /* GamesWrapperTests.m in Sources */,
+				B9FD5CE617891FA000EC2B3A /* TweetComposeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1152,7 +1174,7 @@
 		B9868B3F171D11F80021AB7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Aditi Technologies";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1171,7 +1193,7 @@
 					"\"$(SRCROOT)/GamesWrapper/Utilities/Flurry iPhone SDK viPhone 4.2.1/Flurry-iOS-4.2.1/FlurryAds\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
+				PROVISIONING_PROFILE = "5672226E-2543-4449-A45C-9DD27736E4A9";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1180,8 +1202,8 @@
 		B9868B40171D11F80021AB7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ladbrokes Sportsbook LP (NR6ME9KP79)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Aditi Technologies";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Aditi Technologies";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1199,8 +1221,8 @@
 					"\"$(SRCROOT)/GamesWrapper/Utilities/Flurry iPhone SDK viPhone 4.2.1/Flurry-iOS-4.2.1/FlurryAds\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10D0216D-EA65-426E-A587-A0D264D1C7CE";
+				PROVISIONING_PROFILE = "5672226E-2543-4449-A45C-9DD27736E4A9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5672226E-2543-4449-A45C-9DD27736E4A9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
