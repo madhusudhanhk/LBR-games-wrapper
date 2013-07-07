@@ -11,6 +11,7 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 #import "Flurry.h"
+#import "TweetComposeViewController.h"
 
 
 
@@ -296,5 +297,62 @@
     
 }
 
+#pragma mark Scocial Media connect
+
+
+-(IBAction)callTwitter:(id)sender{
+    
+    
+    
+    //* Check for iOS version *//
+    
+    
+    if (SYSTEM_VERSION_LESS_THAN(@"5.0")) {
+        
+        UIAlertView *aletView =[[UIAlertView alloc]initWithTitle:@"Alert" message:@"Update to iOS 5.0 +" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];;
+        [aletView show];
+        
+        
+    }
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0")) {
+        TWTweetComposeViewController *tweetComposeViewController = [[TWTweetComposeViewController alloc] init];
+        [tweetComposeViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+            [self dismissModalViewControllerAnimated:YES];
+        }];
+        [self presentModalViewController:tweetComposeViewController animated:YES];
+    }
+
+    
+}
+
+
+-(IBAction)callFacebook:(id)sender{
+    
+    
+    //* Check for iOS version *//
+    
+    
+    
+    if (SYSTEM_VERSION_LESS_THAN(@"6.0")) {
+    
+       
+        
+        
+    }else if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+    
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+        {
+            SLComposeViewController*fbViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            
+            [fbViewController setInitialText:@""];
+            [fbViewController addImage:[UIImage imageNamed:@""]];
+            [self presentViewController:fbViewController animated:YES completion:nil];
+        }
+    }
+    
+    
+
+}
 
 @end

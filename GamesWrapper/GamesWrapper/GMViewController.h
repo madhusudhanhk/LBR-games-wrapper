@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GMPopOverViewController.h"
+#import <Twitter/Twitter.h>
+
 
 @interface GMViewController : UIViewController{
     
@@ -26,5 +28,9 @@
 
 
 -(NSString *)loadWebViewWithUrl:(NSString *)newUrl;
+
+
+-(IBAction)callTwitter:(id)sender;
+-(IBAction)callFacebook:(id)sender;
 
 @end
