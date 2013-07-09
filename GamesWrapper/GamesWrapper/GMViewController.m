@@ -12,12 +12,14 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Flurry.h"
 #import "TweetComposeViewController.h"
+#import "FacebookController.h"
 
 
 
 @interface GMViewController ()
 -(BOOL)checkForRestrictedUrls:(NSString *)urlSrting;
 -(void)launchPopOverViewController:(NSString *)urlString;
+-(void)cookiesCheckForLoginDetail;
 
 
 
@@ -147,6 +149,12 @@
         [alt    show];
         
     }
+    
+    // * add Observer when the set of cookies changes * //
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(cookiesCheckForLoginDetail)
+                                             name:NSHTTPCookieManagerCookiesChangedNotification
+                                           object:nil];
         
 }
 
@@ -284,10 +292,23 @@
     [Flurry logEvent:Flurry_URL_loadedInWebView withParameters:dictionary timed:YES];
     
     
-    
-    
-   // NSLog(@"url %@",[webView.request.URL absoluteString]);
+    /*
+    NSHTTPCookieStorage *sharedHTTPCookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray *cookies = [sharedHTTPCookieStorage cookiesForURL:[NSURL URLWithString:[webView.request.URL absoluteString]]];
+    NSEnumerator *enumerator = [cookies objectEnumerator];
+    NSHTTPCookie *cookie;
+    while (cookie = [enumerator nextObject]) {
    
+        NSLog(@"COOKIE{name: %@, value: %@}", [cookie name], [cookie value]);
+        
+        if([[cookie name] isEqualToString:@"LIL_LOGIN"]){
+            
+        }
+    
+    }
+    NSLog(@"url %@",[webView.request.URL absoluteString]);
+   
+    */
     
     
 }
@@ -302,8 +323,7 @@
 
 -(IBAction)callTwitter:(id)sender{
     
-    
-    
+  
     //* Check for iOS version *//
     
     
@@ -333,10 +353,16 @@
     //* Check for iOS version *//
     
     
+  
     
     if (SYSTEM_VERSION_LESS_THAN(@"6.0")) {
     
        
+        FacebookController * facebookViewController = [[FacebookController alloc] initWithNibName: @"Facebook_iphone"
+                                                                                           bundle: nil];
+        UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController: facebookViewController];
+        navController.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentModalViewController: navController animated: YES];
         
         
     }else if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
@@ -354,5 +380,25 @@
     
 
 }
-
+-(void)cookiesCheckForLoginDetail{
+    
+    
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [cookieJar cookies]) {
+      
+        //NSLog(@"COOKIE{name: %@, value: %@}", [cookie name], [cookie value]);
+        
+        if(![[cookie name] isEqualToString:@"LIL_Login"]){
+            
+            NSLog(@"Disable Banking button here");
+            NSLog(@"COOKIE{name: %@}", [cookie name]);
+        }else {
+        
+            NSLog(@"Enable Banking button here");
+            NSLog(@"COOKIE{name: %@}", [cookie name]);
+            
+        }
+    }
+}
 @end
