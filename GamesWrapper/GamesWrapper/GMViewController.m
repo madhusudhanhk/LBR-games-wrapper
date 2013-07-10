@@ -29,6 +29,10 @@
 @implementation GMViewController
 @synthesize myWebView;
 @synthesize splashImage;
+@synthesize toolBar;
+@synthesize popOverControl;
+
+
 
 
 
@@ -155,6 +159,16 @@
                                          selector:@selector(cookiesCheckForLoginDetail)
                                              name:NSHTTPCookieManagerCookiesChangedNotification
                                            object:nil];
+    
+    
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [toolBar setBackgroundImage:[UIImage imageNamed:@"background-small.png"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    }
+    else{
+        [toolBar setBackgroundImage:[UIImage imageNamed:@"ipad-bg.png"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    }
+
         
 }
 
@@ -321,7 +335,7 @@
 #pragma mark Scocial Media connect
 
 
--(IBAction)callTwitter:(id)sender{
+-(void)callTwitter{
     
   
     //* Check for iOS version *//
@@ -347,7 +361,7 @@
 }
 
 
--(IBAction)callFacebook:(id)sender{
+-(void)callFacebook{
     
     
     //* Check for iOS version *//
@@ -401,4 +415,143 @@
         }
     }
 }
+
+
+
+
+- (void)showEmail {
+    // Email Subject
+    // NSString *emailTitle = @"Test Email";
+    NSString *emailTitle = @"";
+    // Email Content
+    //NSString *messageBody = @"iOS programming is so fun!";
+    NSString *messageBody = @"";
+    // To address
+    // NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@""];
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    if ([MFMailComposeViewController canSendMail]) {
+        // show a mail composition view
+        mc.mailComposeDelegate = self;
+        [mc setSubject:emailTitle];
+        [mc setMessageBody:messageBody isHTML:NO];
+        [mc setToRecipients:toRecipents];
+        // Present mail viewcontroller on screen
+        [self presentViewController:mc animated:YES completion:NULL];
+    }
+    //    } else {
+    //        UIAlertView *alt = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"Please configure email Id" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //        [alt show];
+    //        // advise user to set up a mail account and try again
+    //    }
+    
+    
+    
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+
+
+-(IBAction)sharePress{
+    NSLog(@"notifyShare");
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        actionChk = [[UIActionSheet alloc]initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Facebook",@"Twitter",@"Mail",@"SMS", nil];
+        [actionChk showInView:self.view];
+    }
+    else{
+        
+        if ([popOverControl isPopoverVisible]) {
+            [popOverControl dismissPopoverAnimated:YES];
+        } else {
+            //the rectangle here is the frame of the object that presents the popover,
+            //in this case, the UIButton…
+            
+            
+        }
+    }
+    
+}
+
+-(void)notifyMessage{
+    //    NSString *phonenostring = @"Hello";
+    //    NSString *sms = [[NSString alloc] initWithFormat:@"sms:%@",phonenostring];
+    //                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:sms]];
+    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+    if([MFMessageComposeViewController canSendText])
+    {
+        controller.body = @"";
+        controller.messageComposeDelegate = self;
+        // [self presentModalViewController:controller animated:YES];
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+- (void) messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    switch(result)
+    {
+        case MessageComposeResultCancelled: break; //handle cancelled event
+        case MessageComposeResultFailed:{
+            NSString *alertString = @"Unknown Error. Failed to send message";
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:alertString delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            break; //handle failed event
+        }
+        case MessageComposeResultSent:
+            NSLog(@"SMS sent");
+            break; //handle sent event
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"Button index:%i", buttonIndex);
+    
+    switch (buttonIndex) {
+        case 3:
+            NSLog(@"Message");
+            [self notifyMessage];
+            break;
+        case 0:
+            NSLog(@"FaceBook");
+            [self callFacebook];
+            break;
+        case 2:
+            NSLog(@"mailTo");
+            [self showEmail];
+            break;
+            
+        case 1:
+            NSLog(@"Twitter");
+            [self callTwitter];
+            break;
+            
+        default:
+            NSLog(@"ButtonIndex:%d",buttonIndex);
+    }
+}
+
 @end
