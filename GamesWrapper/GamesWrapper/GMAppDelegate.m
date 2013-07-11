@@ -11,9 +11,10 @@
 #import "GMViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "Flurry.h"
-
-
-
+#import "UAirship.h"
+#import "UAPush.h"
+#import "UALocationService.h"
+#import "R1Emitter.h"
 
 @implementation GMAppDelegate
 @synthesize locationManager = _locationManager;
@@ -69,7 +70,48 @@
     
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     
+    //UrbanAirship Integration
+    //Create Airship options directory and add the required UIApplication launchOptions
+    NSMutableDictionary *takeOffOptions = [NSMutableDictionary dictionary];
+    [takeOffOptions setValue:launchOptions forKey:UAirshipTakeOffOptionsLaunchOptionsKey];
+    
+    // Call takeOff (which creates the UAirship singleton), passing in the launch options so the
+    // library can properly record when the app i launched from a push notification. This call is
+    // required.
+    //
+    // Populate AirshipConfig.plist with your app's info from https://go.urbanairship.com
+    [UAirship takeOff:takeOffOptions];
+    
+    // Register for notifications
+    [[UAPush shared]
+     registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                         UIRemoteNotificationTypeSound |
+                                         UIRemoteNotificationTypeAlert)];
+    
+    // This won't run if the user has not authorized location and you as the
+    // developer have enabled location. In the code below you can see the necessary
+    // code to enable location after your pitch.
+    locationService = [[UAirship shared] locationService];
+    [locationService reportCurrentLocation];
+    
+    //Radium One integration
+    // [[R1Emitter sharedInstance] startWithEmitterId:@"trackingID"];
+    //19C5B8F2-5E38-4F53-847B-99C1F4D52F60
+    [[R1Emitter sharedInstance] startWithEmitterId:@"19C5B8F2-5E38-4F53-847B-99C1F4D52F60"];
+    
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    
+    NSLog(@"%@",err);
+}
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Updates the device token and registers the token with UA.
+    [[UAPush shared] registerDeviceToken:deviceToken]; 
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -86,6 +128,7 @@
     /* end the settion and report to flurry */
     
     [Flurry endTimedEvent:Flurry_AppClosed withParameters:nil];
+     locationService.backgroundLocationServiceEnabled = NO;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -115,6 +158,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+     [UAirship land];
 }
 
 
@@ -492,6 +536,7 @@
     
     
     
+    
     return currentLocation;
     
   
@@ -566,7 +611,7 @@
                  if Yes set rootViewController and launch WebView ,
                  else redirect to safari */
                 
-                if([currentLocation isEqualToString:@"United Kingdom"] || [currentLocation isEqualToString:@"Ireland"]){
+                if(![currentLocation isEqualToString:@"United Kingdom"] || [currentLocation isEqualToString:@"Ireland"]){
                     
                     
                     [self setUpRootViewController];

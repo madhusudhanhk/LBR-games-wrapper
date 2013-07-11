@@ -13,12 +13,17 @@
 #import "Flurry.h"
 #import "TweetComposeViewController.h"
 #import "FacebookController.h"
+#import "R1Emitter.h"
+
+
+
 
 
 
 @interface GMViewController ()
 -(BOOL)checkForRestrictedUrls:(NSString *)urlSrting;
 -(void)launchPopOverViewController:(NSString *)urlString;
+-(void)launchPopOverControllerPromo:(NSString *)urlString;
 -(void)cookiesCheckForLoginDetail;
 
 
@@ -31,7 +36,8 @@
 @synthesize splashImage;
 @synthesize toolBar;
 @synthesize popOverControl;
-
+@synthesize bankingButton;
+//@synthesize controllerPopup;
 
 
 
@@ -166,9 +172,15 @@
         [toolBar setBackgroundImage:[UIImage imageNamed:@"background-small.png"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
     }
     else{
+       //
         [toolBar setBackgroundImage:[UIImage imageNamed:@"ipad-bg.png"] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
     }
-
+    
+    //Disable barbutton item
+//bankingButton = [[UIBarButtonItem alloc]init];
+    
+    
+     bankingButton.enabled =  NO;
         
 }
 
@@ -356,7 +368,7 @@
         }];
         [self presentModalViewController:tweetComposeViewController animated:YES];
     }
-
+[[R1Emitter sharedInstance] emitEvent:@"Share with Twitter "];
     
 }
 
@@ -391,7 +403,7 @@
         }
     }
     
-    
+    [[R1Emitter sharedInstance] emitEvent:@"Share with Facebook "];
 
 }
 -(void)cookiesCheckForLoginDetail{
@@ -407,10 +419,14 @@
             
             NSLog(@"Disable Banking button here");
             NSLog(@"COOKIE{name: %@}", [cookie name]);
+self.bankingButton.enabled =  NO;
         }else {
         
             NSLog(@"Enable Banking button here");
             NSLog(@"COOKIE{name: %@}", [cookie name]);
+        self.bankingButton.enabled =  YES;
+            [[R1Emitter sharedInstance] emitEvent:@"User Login "];
+            break;
             
         }
     }
@@ -439,11 +455,8 @@
         // Present mail viewcontroller on screen
         [self presentViewController:mc animated:YES completion:NULL];
     }
-    //    } else {
-    //        UIAlertView *alt = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"Please configure email Id" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    //        [alt show];
-    //        // advise user to set up a mail account and try again
-    //    }
+    //Radium one event log for mail
+[[R1Emitter sharedInstance] emitEvent:@"User Mail "];
     
     
     
@@ -460,9 +473,13 @@
             NSLog(@"Mail saved");
             break;
         case MFMailComposeResultSent:
+            //Radium one event log for mail
+            [[R1Emitter sharedInstance] emitEvent:@"User Mail "];
             NSLog(@"Mail sent");
             break;
         case MFMailComposeResultFailed:
+            //Radium one event log for mail
+            [[R1Emitter sharedInstance] emitEvent:@"User Mail sent failed "];
             NSLog(@"Mail sent failure: %@", [error localizedDescription]);
             break;
         default:
@@ -476,23 +493,45 @@
 
 
 
--(IBAction)sharePress{
+-(IBAction)sharePress:(UIBarButtonItem*)sender{
     NSLog(@"notifyShare");
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         actionChk = [[UIActionSheet alloc]initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Facebook",@"Twitter",@"Mail",@"SMS", nil];
         [actionChk showInView:self.view];
     }
-    else{
+   else{
+//        
+//        if ([popOverControl isPopoverVisible]) {
+//            [popOverControl dismissPopoverAnimated:YES];
+//        } else {
+//             UIBarButtonItem *tappedButton = (UIBarButtonItem *)sender;
+//              popOverControl = [[UIPopoverController alloc]initWithContentViewController:controllerPopup];
+//            [popOverControl presentPopoverFromBarButtonItem:tappedButton permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+           //            //the rectangle here is the frame of the object that presents the popover,
+//            //in this case, the UIButton…
+//            UIBarButtonItem *tappedButton = (UIBarButtonItem *)sender;
+//            
+//            // If the master list popover is showing, dismiss it before presenting the popover from the bar button item.
+////            if (self.popOverControl != nil) {
+////                [self.popOverControl dismissPopoverAnimated:YES];
+////            }
+//            
+//            // If the popover is already showing from the bar button item, dismiss it. Otherwise,
+          //  present it.
+//            //if (self.popOverControl.popoverVisible == NO) {
+//                [self.popOverControl presentPopoverFromBarButtonItem:tappedButton permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+//           // }
+////            else {
+////                [self.popOverControl dismissPopoverAnimated:YES];
+            
+            actionChk = [[UIActionSheet alloc]initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Facebook",@"Twitter",@"Mail",@"SMS", nil];
+            [actionChk showInView:self.view];
         
-        if ([popOverControl isPopoverVisible]) {
-            [popOverControl dismissPopoverAnimated:YES];
-        } else {
-            //the rectangle here is the frame of the object that presents the popover,
-            //in this case, the UIButton…
+            }
             
             
-        }
-    }
+       // }
+    //}
     
 }
 
@@ -508,6 +547,8 @@
         // [self presentModalViewController:controller animated:YES];
         [self presentViewController:controller animated:YES completion:nil];
     }
+    //Radium one event log for mail
+    [[R1Emitter sharedInstance] emitEvent:@"User SMS "];
 }
 - (void) messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
@@ -518,10 +559,14 @@
             NSString *alertString = @"Unknown Error. Failed to send message";
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:alertString delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
+            //Radium one event log for SMS
+            [[R1Emitter sharedInstance] emitEvent:@"User SMS failed"];
             break; //handle failed event
         }
         case MessageComposeResultSent:
             NSLog(@"SMS sent");
+            //Radium one event log for SMS
+            [[R1Emitter sharedInstance] emitEvent:@"User SMS sent"];
             break; //handle sent event
     }
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -553,5 +598,45 @@
             NSLog(@"ButtonIndex:%d",buttonIndex);
     }
 }
+
+-(IBAction)bankingAction:(id)sender{
+    
+    [self loadWebViewWithUrl:[NSString stringWithFormat:@"https://mobile.ladbrokes.com/lobby/bingo/banking?retUrl=%@",[myWebView.request.URL absoluteString]]];
+    //Radium one event log for Banking Page
+    [[R1Emitter sharedInstance] emitEvent:@"Banking Page redirection"];
+    
+    //  [self loadWebViewWithUrl:@"https://mobile.ladbrokes.com/lobby/bingo/banking?retUrl=http://mobile.ladbrokes.com/games"];
+    
+  //  [[R1Emitter sharedInstance] emitEvent:@"Banking Despriction" withParameters:@{"Banking":"value"}];
+    
+}
+-(IBAction)helpAction:(id)sender{
+    
+    
+    NSString *url = @"http://mobile.ladbrokes.com/lobby/apps/games/help";
+    [self launchPopOverViewController:url];
+    
+          //[self loadWebViewWithUrl:@"http://mobile.ladbrokes.com/lobby/apps/games/help"];
+    //Radium one event log for Help Page
+    [[R1Emitter sharedInstance] emitEvent:@"Help Page redirection"];
+}
+-(IBAction)appsAction:(id)sender{
+    //* ladbrokes-sportsbook-lp is developer name , its list all applications developed by this developer. All the Apps available only in UK market *//
+    
+    
+    NSURL *appItunesUrl = [NSURL URLWithString:@"https://itunes.apple.com/gb/artist/ladbrokes-sportsbook-lp/id375820903"];
+    [[UIApplication sharedApplication] openURL:appItunesUrl];    //Radium one event log for Apps Page
+    [[R1Emitter sharedInstance] emitEvent:@"Apps Page redirection"];
+}
+-(IBAction)promoAction:(id)sender{
+    
+    NSString *url = @"http://mobile.ladbrokes.com/lobby/games/promotions";
+    [self launchPopOverViewController:url];
+      // [self loadWebViewWithUrl:@"http://mobile.ladbrokes.com/lobby/games/promotions"];
+    //Radium one event log for promo Page
+    [[R1Emitter sharedInstance] emitEvent:@"Promo Page redirection"];
+}
+
+
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "UALocationService.h"
 
 @class GMViewController;
 
@@ -18,7 +18,7 @@
      NSString *userLocation;
      UIImageView *optionsPage;
      UIActivityIndicatorView *activityIndictr;
-    
+    UALocationService *locationService;
 }
 
 @property (strong, nonatomic) UIWindow *window;
